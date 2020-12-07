@@ -1,4 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+    ---------
+    VARIABLES
+    ---------
+*/
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$primary: #181c22;
+$secondary: #363636;
+
+/*
+    ---------
+    GENERAL
+    ---------
+*/
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/*
+    ---------
+    SCROLL
+    ---------
+*/
+
+.scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: #4f4f4f;
+    border-radius: 4px;
+}
+
+/*
+    ---------
+    ANIMATIONS
+    ---------
+*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
