@@ -7,7 +7,7 @@
     </div>
 </mat-toolbar>
 
-<mat-drawer-container [hasBackdrop]="true" class="drawer-container scroll">
+<mat-drawer-container [hasBackdrop]="true" class="drawer-container">
     <mat-drawer #drawer [mode]="over" class="drawer sidenavBgColor">
         <mat-list role="list">
             <mat-list-item role="navigation" class="btn drawer-item">
@@ -16,12 +16,14 @@
                     Buscador
                 </a>
             </mat-list-item>
+            <mat-divider></mat-divider>
             <mat-list-item role="navigation" class="btn drawer-item">
                 <a [routerLink]="['price-tracker']" (click)="drawer.toggle()">
                     <i class="fas fa-search-dollar"></i>
                     Price tracker
                 </a>
             </mat-list-item>
+            <mat-divider></mat-divider>
             <mat-list-item role="navigation" class="btn drawer-item">
                 <a [routerLink]="['help']" (click)="drawer.toggle()">
                     <i class="fas fa-info"></i>

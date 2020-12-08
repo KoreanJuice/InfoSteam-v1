@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
 
   public title = 'InfoSteam';
   public over = 'over';
-  public loading: boolean;
+  public loading = true;
 
   constructor(
   ) { }
