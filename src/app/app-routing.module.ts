@@ -2,22 +2,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // Components
+import { PriceTrackerComponent } from './components/price-tracker/price-tracker.component';
+import { SearchComponent } from './components/search/search.component';
 import { AngularHelpComponent } from './components/angular-help/angular-help.component';
-import { XyzComponent } from './components/xyz/xyz.component';
 
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: 'help',
-        component: AngularHelpComponent,
-      },
-      {
-        path: 'xyz',
-        component: XyzComponent,
-      }
-    ]
+    component: SearchComponent,
+  },
+  {
+    path: 'price-tracker',
+    component: PriceTrackerComponent,
+  },
+  {
+    path: 'help',
+    component: AngularHelpComponent,
   },
 ];
 
