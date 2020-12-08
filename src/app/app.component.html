@@ -1,14 +1,29 @@
-<h1>Home page works!</h1>
-<p>there goes a scroll :)</p>
+<mat-toolbar class="primaryBgColor">
+    <button mat-icon-button class="btnMenuIcon" (click)="drawer.toggle()">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div>
+        <div class="title">{{ title | uppercase }}</div>
+    </div>
+</mat-toolbar>
 
-<h2>
-    <a [routerLink]="['']">MAIN !</a>
-</h2>
-<h3>
-    <a [routerLink]="['help']">HELP !</a>
-</h3>
-<h4>
-    <a [routerLink]="['xyz']">XYZ !</a>
-</h4>
+<mat-drawer-container [hasBackdrop]="true" class="drawer-container scroll">
+    <mat-drawer #drawer [mode]="over" class="drawer">
+        <div class="drawer-item">
+            <i class="fas fa-search"></i>
+            <a [routerLink]="['']">Buscador</a>
+        </div>
+        <div class="drawer-item">
+            <i class="fas fa-search-dollar"></i>
+            <a [routerLink]="['price-tracker']">Price tracker</a>
+        </div>
+        <div class="drawer-item">
+            <i class="fas fa-info"></i>
+            <a [routerLink]="['help']">Help</a>
+        </div>
+    </mat-drawer>
 
-<router-outlet></router-outlet>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
