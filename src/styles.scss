@@ -4,8 +4,14 @@
     ---------
 */
 
-$primary: #181c22;
-$secondary: #363636;
+$primary: #212121;
+$secondary: #252525;
+$tertiary: #303030;
+$extra: #4f4f4f;
+$perfect: #fecc09;
+$success: #a5c93a;
+$great: #f8ac37;
+$info: #55aece;
 
 /*
     ---------
@@ -13,17 +19,87 @@ $secondary: #363636;
     ---------
 */
 
+* {
+    color: white;
+}
+
 html,
 body {
     height: 100%;
 }
+
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.pointer {
-    cursor: pointer;
+
+.primaryColor { color: $primary; }
+.secondaryColor { color: $secondary; }
+.tertiaryColor { color: $tertiary; }
+.extraColor { color: $extra; }
+.perfectColor { color: $perfect; }
+.successColor { color: $success; }
+.greatColor { color: $great; }
+.infoColor { color: $info; }
+
+.primaryBgColor { background-color: $primary; }
+.secondaryBgColor { background-color: $secondary; }
+.tertiaryBgColor { background-color: $tertiary; }
+.extraBgColor { background-color: $extra; }
+.perfectBgColor { background-color: $perfect; }
+.successBgColor { background-color: $success; }
+.greatBgColor { background-color: $great; }
+.infoBgColor { background-color: $info; }
+
+.pointer { cursor: pointer; }
+[class^="btn"] { cursor: pointer; }
+
+/*
+    ---------
+    TOLLBAR
+    ---------
+*/
+
+.btnMenuIcon {
+    font-size: 1.5rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+/*
+    ---------
+    SIDENAV
+    ---------
+*/
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    background-color: $tertiary;
+}
+
+.drawer-container {
+    height: calc(100% - 64px);
+}
+
+.drawer {
+    width: 80%;
+    background-color: $secondary;
+}
+
+.drawer-item {
+    padding-left: 16px;
+
+    i {
+        opacity: .5;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 500;
+    }
 }
 
 /*
@@ -33,12 +109,13 @@ body {
 */
 
 .scroll::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
+    background-color: $tertiary;
 }
 
 .scroll::-webkit-scrollbar-thumb {
-    background: #4f4f4f;
+    background: $extra;
     border-radius: 4px;
 }
 
@@ -59,4 +136,44 @@ body {
 
 .fadeIn {
     animation-name: fadeIn;
+}
+
+/*
+    ---------
+    RESPONSIVE
+    ---------
+*/
+
+/* For mobile phones: */
+[class*="col-"] { width: 100%; }
+/* For tablets: */
+@media only screen and (min-width: 768px) {
+    // .col-m-1 { width: 8.33%; }
+    // .col-m-2 { width: 16.66%; }
+    // .col-m-3 { width: 25%; }
+    // .col-m-4 { width: 33.33%; }
+    // .col-m-5 { width: 41.66%; }
+    // .col-m-6 { width: 50%; }
+    // .col-m-7 { width: 58.33%; }
+    // .col-m-8 { width: 66.66%; }
+    // .col-m-9 { width: 75%; }
+    // .col-m-10 { width: 83.33%; }
+    // .col-m-11 { width: 91.66%; }
+    // .col-m-12 { width: 100%; }
+    .drawer { width: 25%; }
+}
+/* For desktop: */
+@media only screen and (min-width: 1024px) {
+    // .col-1 { width: 8.33%; }
+    // .col-2 { width: 16.66%; }
+    // .col-3 { width: 25%; }
+    // .col-4 { width: 33.33%; }
+    // .col-5 { width: 41.66%; }
+    // .col-6 { width: 50%; }
+    // .col-7 { width: 58.33%; }
+    // .col-8 { width: 66.66%; }
+    // .col-9 { width: 75%; }
+    // .col-10 { width: 83.33%; }
+    // .col-11 { width: 91.66%; }
+    // .col-12 { width: 100%; }
 }
