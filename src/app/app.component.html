@@ -1,4 +1,4 @@
-<mat-toolbar class="primaryBgColor">
+<mat-toolbar class="toolbar headerBgColor">
     <button mat-icon-button class="btnMenuIcon" (click)="drawer.toggle()">
         <i class="fas fa-bars"></i>
     </button>
@@ -8,19 +8,27 @@
 </mat-toolbar>
 
 <mat-drawer-container [hasBackdrop]="true" class="drawer-container scroll">
-    <mat-drawer #drawer [mode]="over" class="drawer">
-        <div class="drawer-item">
-            <i class="fas fa-search"></i>
-            <a [routerLink]="['']">Buscador</a>
-        </div>
-        <div class="drawer-item">
-            <i class="fas fa-search-dollar"></i>
-            <a [routerLink]="['price-tracker']">Price tracker</a>
-        </div>
-        <div class="drawer-item">
-            <i class="fas fa-info"></i>
-            <a [routerLink]="['help']">Help</a>
-        </div>
+    <mat-drawer #drawer [mode]="over" class="drawer sidenavBgColor">
+        <mat-list role="list">
+            <mat-list-item role="navigation" class="btn drawer-item">
+                <a [routerLink]="['']" (click)="drawer.toggle()">
+                    <i class="fas fa-search"></i>
+                    Buscador
+                </a>
+            </mat-list-item>
+            <mat-list-item role="navigation" class="btn drawer-item">
+                <a [routerLink]="['price-tracker']" (click)="drawer.toggle()">
+                    <i class="fas fa-search-dollar"></i>
+                    Price tracker
+                </a>
+            </mat-list-item>
+            <mat-list-item role="navigation" class="btn drawer-item">
+                <a [routerLink]="['help']" (click)="drawer.toggle()">
+                    <i class="fas fa-info"></i>
+                    Help
+                </a>
+            </mat-list-item>
+        </mat-list>
     </mat-drawer>
 
     <mat-drawer-content>
