@@ -4,14 +4,15 @@
     ---------
 */
 
-$primary: #212121;
-$secondary: #252525;
-$tertiary: #303030;
-$extra: #4f4f4f;
-$perfect: #fecc09;
-$success: #a5c93a;
-$great: #f8ac37;
-$info: #55aece;
+$header-bg-color: #212121;
+$sidenav-bg-color: #252525;
+$body-bg-color: #303030;
+$extra-color: #4f4f4f;
+$text-color: #fff;
+$perfect-color: #fecc09;
+$success-color: #a5c93a;
+$great-color: #f8ac37;
+$info-color: #55aece;
 
 /*
     ---------
@@ -20,7 +21,7 @@ $info: #55aece;
 */
 
 * {
-    color: white;
+    color: $text-color;
 }
 
 html,
@@ -33,24 +34,16 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.extraColor { color: $extra-color; }
+.perfectColor { color: $perfect-color; }
+.successColor { color: $success-color; }
+.greatColor { color: $great-color; }
+.infoColor { color: $info-color; }
 
-.primaryColor { color: $primary; }
-.secondaryColor { color: $secondary; }
-.tertiaryColor { color: $tertiary; }
-.extraColor { color: $extra; }
-.perfectColor { color: $perfect; }
-.successColor { color: $success; }
-.greatColor { color: $great; }
-.infoColor { color: $info; }
-
-.primaryBgColor { background-color: $primary; }
-.secondaryBgColor { background-color: $secondary; }
-.tertiaryBgColor { background-color: $tertiary; }
-.extraBgColor { background-color: $extra; }
-.perfectBgColor { background-color: $perfect; }
-.successBgColor { background-color: $success; }
-.greatBgColor { background-color: $great; }
-.infoBgColor { background-color: $info; }
+.headerBgColor { background-color: $header-bg-color; }
+.sidenavBgColor { background-color: $sidenav-bg-color; }
+.bodyBgColor { background-color: $body-bg-color; }
+.extraBgColor { background-color: $extra-color; }
 
 .pointer { cursor: pointer; }
 [class^="btn"] { cursor: pointer; }
@@ -60,6 +53,9 @@ body {
     TOLLBAR
     ---------
 */
+.toolbar {
+    padding: 0 10px;
+}
 
 .btnMenuIcon {
     font-size: 1.5rem;
@@ -77,7 +73,7 @@ body {
 */
 
 .mat-drawer-backdrop.mat-drawer-shown {
-    background-color: $tertiary;
+    background-color: $body-bg-color;
 }
 
 .drawer-container {
@@ -86,19 +82,27 @@ body {
 
 .drawer {
     width: 80%;
-    background-color: $secondary;
+    padding-top: 10px;
 }
 
 .drawer-item {
-    padding-left: 16px;
-
-    i {
-        opacity: .5;
-    }
+    padding: 10px 15px;
+    font-size: 20px;
 
     a {
+        display: block;
         text-decoration: none;
-        font-weight: 500;
+        width: 100%;
+        height: 100%;
+
+        i {
+            width: 20px;
+            height: 20px;
+            padding-right: 5px;
+            text-align: center;
+            font-size: 20px;
+            opacity: .35;
+        }
     }
 }
 
@@ -111,11 +115,11 @@ body {
 .scroll::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-    background-color: $tertiary;
+    background-color: $body-bg-color;
 }
 
 .scroll::-webkit-scrollbar-thumb {
-    background: $extra;
+    background: $extra-color;
     border-radius: 4px;
 }
 
@@ -145,7 +149,7 @@ body {
 */
 
 /* For mobile phones: */
-[class*="col-"] { width: 100%; }
+// [class*="col-"] { width: 100%; }
 /* For tablets: */
 @media only screen and (min-width: 768px) {
     // .col-m-1 { width: 8.33%; }
