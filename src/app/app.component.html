@@ -13,10 +13,28 @@
             <mat-list-item role="navigation" class="btn drawer-item">
                 <a [routerLink]="['']" (click)="drawer.toggle()">
                     <i class="fas fa-search"></i>
-                    Buscador
+                    Tracker
                 </a>
             </mat-list-item>
             <mat-divider></mat-divider>
+            <!-- 
+            <mat-list-item role="navigation" class="btn drawer-item">
+                <a [routerLink]="['user/:id']" (click)="drawer.toggle()">
+                    <i class="fas fa-user"></i>
+                    Users
+                </a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            
+            <mat-list-item role="navigation" class="btn drawer-item">
+                <a [routerLink]="['game/:id']" (click)="drawer.toggle()">
+                    <i class="fas fa-gamepad"></i>
+                    Games
+                </a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            -->
+
             <mat-list-item role="navigation" class="btn drawer-item">
                 <a [routerLink]="['price-tracker']" (click)="drawer.toggle()">
                     <i class="fas fa-search-dollar"></i>
@@ -24,10 +42,19 @@
                 </a>
             </mat-list-item>
             <mat-divider></mat-divider>
+
             <mat-list-item role="navigation" class="btn drawer-item">
                 <a [routerLink]="['help']" (click)="drawer.toggle()">
                     <i class="fas fa-info"></i>
                     Help
+                </a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item role="navigation" class="btn drawer-item">
+                <a [routerLink]="['legal']" (click)="drawer.toggle()">
+                    <i class="fas fa-balance-scale"></i>
+                    Legal
                 </a>
             </mat-list-item>
         </mat-list>

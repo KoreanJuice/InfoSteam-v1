@@ -1,15 +1,26 @@
 // Angular
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// Components
-import { PriceTrackerComponent } from './components/price-tracker/price-tracker.component';
-import { SearchComponent } from './components/search/search.component';
-import { AngularHelpComponent } from './components/angular-help/angular-help.component';
+// Pages components
+import { HomeComponent } from './pages/home/home.component';
+import { UserComponent } from './pages/user/user.component';
+import { GameComponent } from './pages/game/game.component';
+import { PriceTrackerComponent } from './pages/price-tracker/price-tracker.component';
+import { HelpComponent } from './pages/help/help.component';
+import { LegalComponent } from './pages/legal/legal.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SearchComponent,
+    component: HomeComponent,
+  },
+  {
+    path: 'user/:id',
+    component: UserComponent,
+  },
+  {
+    path: 'game/:id',
+    component: GameComponent,
   },
   {
     path: 'price-tracker',
@@ -17,7 +28,11 @@ const routes: Routes = [
   },
   {
     path: 'help',
-    component: AngularHelpComponent,
+    component: HelpComponent,
+  },
+  {
+    path: 'legal',
+    component: LegalComponent,
   },
 ];
 
