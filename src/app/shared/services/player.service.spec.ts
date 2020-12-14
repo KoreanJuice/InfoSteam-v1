@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SteamApiService } from './steam-api.service';
+import { PlayerService } from './player.service';
 
-describe('SteamApiService', () => {
-  let service: SteamApiService;
+describe('PlayerService', () => {
+  let service: PlayerService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SteamApiService);
+    service = TestBed.inject(PlayerService);
   });
 
   it('should be created', () => {
