@@ -1,7 +1,15 @@
 <div class="component-container">
-    <mat-card (click)="nierData()">
-        <mat-card-title>Nier: Automata</mat-card-title>
-        <mat-card-content>click and see console.log (f12)</mat-card-content>
+    <mat-card (click)="onClick()">
+        <mat-card-title>game name: {{gameName | titlecase}}</mat-card-title>
+        <mat-card-content>
+            <div class="game-img">
+                <img src="{{gameImg}}" alt="game image header">
+            </div>
+            <div class="game-desc">
+                <p>game name: {{gameName | titlecase}}</p>
+                <p>game version: {{gameVersion}}</p>
+            </div>
+        </mat-card-content>
     </mat-card>
     <mat-card>hello!</mat-card>
     <mat-card>hello!</mat-card>
