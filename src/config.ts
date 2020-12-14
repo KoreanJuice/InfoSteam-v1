@@ -1,4 +1,5 @@
-const protocol = `https`;
-const urn = `api.steampowered.com`;
+export const apiUrl = `https://api.steampowered.com`;
 
-export const url = `${protocol}://${urn}`;
+export function headerImgUrl(appid: string): string {
+  return `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`;
+}

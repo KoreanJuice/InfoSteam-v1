@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { GetSchemaForGame } from '../interfaces/steam-user-stats/get-schema-for-game';
 import { key } from '../../../key';
-import { url } from '../../../config';
+import { apiUrl } from '../../../config';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,6 @@ export class SteamUserStatsService {
   ) { }
 
   public getSchemaForGame(appid: string): Observable<GetSchemaForGame> {
-    return this.httpClient.get<GetSchemaForGame>(`${url}/${this.interface}/GetSchemaForGame/v2/?key=${key}&appid=${appid}`);
+    return this.httpClient.get<GetSchemaForGame>(`${apiUrl}/${this.interface}/GetSchemaForGame/v2/?key=${key}&appid=${appid}`);
   }
 }

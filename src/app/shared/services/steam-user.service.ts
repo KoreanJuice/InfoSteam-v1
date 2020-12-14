@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { GetPlayerSummaries } from '../interfaces/steam-user/get-player-summaries';
 import { ResolveVanityUrl } from '../interfaces/steam-user/resolve-vanity-url';
 import { key } from '../../../key';
-import { url } from '../../../config';
+import { apiUrl } from '../../../config';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,10 @@ export class SteamUserService {
   ) { }
 
   public getPlayerSummaries(steamids: string): Observable<GetPlayerSummaries> {
-    return this.httpClient.get<GetPlayerSummaries>(`${url}/${this.interface}/GetPlayerSummaries/v2/?key=${key}&steamids=${steamids}`);
+    return this.httpClient.get<GetPlayerSummaries>(`${apiUrl}/${this.interface}/GetPlayerSummaries/v2/?key=${key}&steamids=${steamids}`);
   }
 
   public resolveVanityURL(vanityUrl: string): Observable<ResolveVanityUrl> {
-    return this.httpClient.get<ResolveVanityUrl>(`${url}/${this.interface}/ResolveVanityURL/v1/?key=${key}&vanityurl=${vanityUrl}`);
+    return this.httpClient.get<ResolveVanityUrl>(`${apiUrl}/${this.interface}/ResolveVanityURL/v1/?key=${key}&vanityurl=${vanityUrl}`);
   }
 }
