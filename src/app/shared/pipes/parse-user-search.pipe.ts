@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'parseSearch'
+  name: 'parseUserSearch'
 })
-export class ParseSearchPipe implements PipeTransform {
+export class ParseUserSearchPipe implements PipeTransform {
 
   transform(value: unknown, ...args: unknown[]): unknown {
     return null;

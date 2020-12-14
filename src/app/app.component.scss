@@ -2,9 +2,10 @@
 
 /*
     ---------
-    TOLLBAR
+    TOOLBAR
     ---------
 */
+
 .toolbar {
     padding: 0 10px;
     height: 64px;
@@ -27,6 +28,7 @@
 
 ::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
     background-color: $body-bg-color;
+    opacity: .6;
 }
 
 .drawer-container {
@@ -34,25 +36,20 @@
 }
 
 .drawer {
-    width: 80%;
+    width: 70%;
 }
 
 .drawer-item {
     font-size: 20px;
+    outline: none;
 
-    a {
-        display: block;
-        text-decoration: none;
-        width: 100%;
-
-        i {
-            width: 24px;
-            height: 20px;
-            padding-right: 5px;
-            text-align: center;
-            font-size: 20px;
-            opacity: .35;
-        }
+    i {
+        width: 24px;
+        height: 20px;
+        padding-right: 5px;
+        text-align: center;
+        font-size: 18px;
+        opacity: .35;
     }
 
     &:hover {
@@ -67,8 +64,9 @@
 */
 
 @media only screen and (min-width: 768px) {
-    .drawer { width: 25%; }
+    .drawer { width: 33%; }
 }
 
 @media only screen and (min-width: 1024px) {
+    .drawer { width: 25%; }
 }

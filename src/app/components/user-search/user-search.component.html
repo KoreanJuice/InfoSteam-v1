@@ -1,0 +1,12 @@
+<div class="component-container">
+    <form [formGroup]="form">
+        <mat-form-field appearance="standard" class="searchBar">
+            <mat-label>User search</mat-label>
+            <input matInput formControlName="search" placeholder="Username / steamid">
+            <button matSuffix mat-raised-button (click)="onSaveClick()">
+                <i class="fas fa-search"></i>
+            </button>
+            <mat-hint>Search user pages</mat-hint>
+        </mat-form-field>
+    </form>
+</div>

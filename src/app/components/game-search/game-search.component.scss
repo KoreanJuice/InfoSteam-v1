@@ -2,12 +2,16 @@
 
 /*
     ---------
-    EACH CARD
+    SEARCHBAR
     ---------
 */
 
-mat-card {
-    margin: 1em auto;
+.searchBar {
+    width: 100%;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: $extra-color;
 }
 
 /*
@@ -18,12 +22,7 @@ mat-card {
 
 @media only screen and (min-width: 1024px) {
     .component-container {
-        // display: flex;
-
-        mat-card {
-            width: 50%;
-            margin: 1em auto;
-        }
+        width: 50%;
+        margin: auto;
     }
-    
 }

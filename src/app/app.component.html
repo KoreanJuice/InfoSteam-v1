@@ -10,52 +10,41 @@
 <mat-drawer-container [hasBackdrop]="true" class="drawer-container">
     <mat-drawer #drawer [mode]="over" class="drawer sidenavBgColor">
         <mat-list role="list">
-            <mat-list-item role="navigation" class="btn drawer-item">
-                <a [routerLink]="['']" (click)="drawer.toggle()">
-                    <i class="fas fa-search"></i>
-                    Tracker
-                </a>
+            <mat-list-item [routerLink]="['']" role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
+                <i class="fas fa-search"></i>
+                Tracker
             </mat-list-item>
             <mat-divider></mat-divider>
             <!-- 
-            <mat-list-item role="navigation" class="btn drawer-item">
-                <a [routerLink]="['user/:id']" (click)="drawer.toggle()">
-                    <i class="fas fa-user"></i>
-                    Users
-                </a>
+            <mat-list-item [routerLink]="['user/:id']"role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
+                <i class="fas fa-user"></i>
+                Users
             </mat-list-item>
             <mat-divider></mat-divider>
             
-            <mat-list-item role="navigation" class="btn drawer-item">
-                <a [routerLink]="['game/:id']" (click)="drawer.toggle()">
-                    <i class="fas fa-gamepad"></i>
-                    Games
-                </a>
+            <mat-list-item [routerLink]="['game/:id']" role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
+                <i class="fas fa-gamepad"></i>
+                Games
             </mat-list-item>
             <mat-divider></mat-divider>
             -->
 
-            <mat-list-item role="navigation" class="btn drawer-item">
-                <a [routerLink]="['price-tracker']" (click)="drawer.toggle()">
-                    <i class="fas fa-search-dollar"></i>
-                    Price tracker
-                </a>
+            <mat-list-item [routerLink]="['price-tracker']" role="navigation" class="btn drawer-item"
+                (click)="drawer.toggle()">
+                <i class="fas fa-search-dollar"></i>
+                Price tracker
             </mat-list-item>
             <mat-divider></mat-divider>
 
-            <mat-list-item role="navigation" class="btn drawer-item">
-                <a [routerLink]="['help']" (click)="drawer.toggle()">
-                    <i class="fas fa-info"></i>
-                    Help
-                </a>
+            <mat-list-item [routerLink]="['help']" role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
+                <i class="fas fa-info"></i>
+                Help
             </mat-list-item>
             <mat-divider></mat-divider>
 
-            <mat-list-item role="navigation" class="btn drawer-item">
-                <a [routerLink]="['legal']" (click)="drawer.toggle()">
-                    <i class="fas fa-balance-scale"></i>
-                    Legal
-                </a>
+            <mat-list-item [routerLink]="['legal']" role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
+                <i class="fas fa-balance-scale"></i>
+                Legal
             </mat-list-item>
         </mat-list>
     </mat-drawer>

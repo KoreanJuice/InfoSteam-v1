@@ -1,0 +1,12 @@
+<div class="component-container">
+    <form [formGroup]="form">
+        <mat-form-field appearance="standard" class="searchBar">
+            <mat-label>Game search</mat-label>
+            <input matInput formControlName="search" placeholder="appid">
+            <button matSuffix mat-raised-button (click)="onSaveClick()">
+                <i class="fas fa-search"></i>
+            </button>
+            <mat-hint>Search game pages</mat-hint>
+        </mat-form-field>
+    </form>
+</div>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Modules
 import { AppRoutingModule } from './app-routing.module';
 import { material } from './shared/material/material';
@@ -18,19 +19,19 @@ import { HelpComponent } from './pages/help/help.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 // Components
 import { AppComponent } from './app.component';
-import { SearchComponent } from './components/search/search.component';
 import { MostPlayedGamesComponent } from './components/most-played-games/most-played-games.component';
 import { RecommendedGamesComponent } from './components/recommended-games/recommended-games.component';
 import { GameDataComponent } from './components/game-data/game-data.component';
 import { UserDataComponent } from './components/user-data/user-data.component';
+import { GameSearchComponent } from './components/game-search/game-search.component';
+import { UserSearchComponent } from './components/user-search/user-search.component';
 // Pipes
-import { ParseSearchPipe } from './shared/pipes/parse-search.pipe';
+import { ParseUserSearchPipe } from './shared/pipes/parse-user-search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PriceTrackerComponent,
-    SearchComponent,
     HomeComponent,
     GameComponent,
     UserComponent,
@@ -40,16 +41,20 @@ import { ParseSearchPipe } from './shared/pipes/parse-search.pipe';
     HelpComponent,
     GameDataComponent,
     UserDataComponent,
-    ParseSearchPipe,
     GameDetailComponent,
     UserDetailComponent,
     PageNotFoundComponent,
+    GameSearchComponent,
+    UserSearchComponent,
+    ParseUserSearchPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     ...material,
   ],
   providers: [],
