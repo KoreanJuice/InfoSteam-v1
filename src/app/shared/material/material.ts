@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 
 export const material = [
   MatExpansionModule,
@@ -18,4 +19,5 @@ export const material = [
   MatListModule,
   MatInputModule,
   MatDividerModule,
+  MatCardModule,
 ];
