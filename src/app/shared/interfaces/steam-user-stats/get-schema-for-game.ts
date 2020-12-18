@@ -6,9 +6,9 @@ export interface GetSchemaForGame {
       achievements: [
         {
           name: string;
-          defaultvalue: string;
+          defaultvalue: number;
           displayName: string;
-          hidden: string;
+          hidden: number;
           icon: string;
           icongray: string;
         }

@@ -1,16 +1,25 @@
 export interface GetPlayerSummaries {
-  respone: {
+  response: {
     players: [
       {
         steamid: string;
-        communityvisibilitystate: string;
-        profilestate: string;
+        communityvisibilitystate: number;
+        profilestate: number;
         personaname: string;
-        lastlogoff: string;
         profileurl: string;
         avatar: string;
         avatarmedium: string;
         avatarfull: string;
+        avatarhash: string;
+        lastlogoff: number;
+        personastate: number;
+        realname: string;
+        primaryclanid: string;
+        timecreated: number;
+        personastateflags: number;
+        loccountrycode: string;
+        locstatecode: string;
+        loccityid: number;
       }
     ]
   };

@@ -1,6 +1,6 @@
 export interface ResolveVanityUrl {
   respone: {
     steamid: string;
-    success: string;
+    success: number;
   };
 }

@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { key } from '../../../key';
-import { apiUrl } from '../../../config';
+import * as config from '../../../config.json';
+
 @Injectable({
   providedIn: 'root'
 })
