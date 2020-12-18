@@ -1,17 +1,23 @@
 <div class="component-container">
-    <mat-card (click)="onClick()">
-        <mat-card-title>game name: {{gameName | titlecase}}</mat-card-title>
-        <mat-card-content>
-            <div class="game-img">
-                <img src="{{gameImg}}" alt="game image header">
-            </div>
+    <mat-card *ngIf="gameData; else gameEmpty">
+        <mat-card-content class="game-card">
+            <img *ngIf="gameData.gameImage; else imageEmpty" class="header-img" src="{{gameData.gameImage}}"
+                alt="{{gameData.gameName}} image" title="{{gameData.gameName}}">
+            <ng-template #imageEmpty>
+                <img class="header-img" src="../../../assets/image-not-found.jpg" alt="image not found"
+                    title="image not found">
+            </ng-template>
             <div class="game-desc">
-                <p>game name: {{gameName | titlecase}}</p>
-                <p>game version: {{gameVersion}}</p>
+                <a href="https://store.steampowered.com/app/{{gameData.appId}}" class="title infoColor">
+                    {{gameData.gameName | titlecase}} <i class="fas fa-external-link-alt infoColor"></i>
+                </a>
             </div>
         </mat-card-content>
     </mat-card>
-    <mat-card>hello!</mat-card>
-    <mat-card>hello!</mat-card>
-    <mat-card>hello!</mat-card>
+
+    <ng-template #gameEmpty>
+        <mat-card class="game-empty">
+            <p>We could not fetch any game right now.</p>
+        </mat-card>
+    </ng-template>
 </div>

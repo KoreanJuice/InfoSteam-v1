@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { headerImgUrl } from '../../../config';
 
-import { SteamUserStatsService } from '../../shared/services/steam-user-stats.service';
 @Component({
   selector: 'app-most-played-games',
   templateUrl: './most-played-games.component.html',
@@ -9,32 +7,11 @@ import { SteamUserStatsService } from '../../shared/services/steam-user-stats.se
 })
 export class MostPlayedGamesComponent implements OnInit {
 
-  gameImg: string;
-  gameName: string;
-  gameVersion: string;
+  gameData: any;
 
-  constructor(
-    private steamUserStats: SteamUserStatsService,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    const appid = '524220';
-    this.steamUserStats.getSchemaForGame(appid)
-      .subscribe(respose => {
-        this.gameImg = headerImgUrl(appid);
-        this.gameName = respose.game.gameName;
-        this.gameVersion = respose.game.gameVersion;
-      });
-  }
-
-  onClick(): void {
-    const appid = '524220';
-    this.steamUserStats.getSchemaForGame(appid)
-      .subscribe(respose => {
-        this.gameImg = headerImgUrl(appid);
-        this.gameName = respose.game.gameName;
-        this.gameVersion = respose.game.gameVersion;
-      });
   }
 
 }
