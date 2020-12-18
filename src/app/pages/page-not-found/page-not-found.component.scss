@@ -1,0 +1,14 @@
+@import '../../../variables';
+
+.error {
+    color: $error-color;
+}
+
+h1,
+h2 {
+    font-weight: 500;
+}
+
+.btnBack {
+    text-decoration: underline;
+}
