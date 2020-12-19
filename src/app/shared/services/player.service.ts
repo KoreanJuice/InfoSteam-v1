@@ -35,8 +35,8 @@ export class PlayerService extends AbstractPlayerService {
 
   getOwnedGames(steamid: number, includeAppinfo: boolean, includePlayedFreeGames?: boolean, appidsFilter?: number): Observable<GetOwnedGames> {
     let urlParams: string;
-    if (includePlayedFreeGames) { urlParams += `&includePlayedFreeGames=${includePlayedFreeGames}`; }
-    if (appidsFilter) { urlParams += `&appidsFilter=${appidsFilter}`; }
+    if (includePlayedFreeGames) { urlParams += `&include_played_free_games=${includePlayedFreeGames}`; }
+    if (appidsFilter) { urlParams += `&appids_filter=${appidsFilter}`; }
 
     return this.http
       .get<GetOwnedGames>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetOwnedGames/v1/?key=${key}&steamid=${steamid}&include_appinfo=${includeAppinfo}${urlParams}`);

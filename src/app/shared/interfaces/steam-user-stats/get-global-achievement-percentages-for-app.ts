@@ -1,3 +1,12 @@
 export interface GetGlobalAchievementPercentagesForApp {
-  any: any;
+  achievementpercentages: {
+    achievements: {
+      achievement: [
+        {
+          name: string;
+          percent: number;
+        }
+      ]
+    }
+  };
 }

@@ -1,3 +1,11 @@
 export interface GetFriendList {
-  any: any;
+  friendslist: {
+    friends: [
+      {
+        steamid: string;
+        relationship: string;
+        friend_since: number;
+      }
+    ]
+  };
 }

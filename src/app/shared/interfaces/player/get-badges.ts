@@ -1,18 +1,19 @@
 export interface GetBadges {
   response: {
-    total_count: number;
-    games: [
+    badges: [
       {
-        appid: number;
-        name: string;
-        playtime_2weeks: number;
-        playtime_forever: number;
-        img_icon_url: string;
-        img_logo_url: string;
-        playtime_windows_forever: number;
-        playtime_mac_forever: number;
-        playtime_linux_forever: number;
+        badgeid: number;
+        level: number;
+        completion_time: number;
+        xp: number;
+        communityitemid?: string;
+        border_color?: number;
+        scarcity: number;
       }
-    ]
-  }
+    ];
+    player_xp: number;
+    player_level: number;
+    player_xp_needed_to_level_up: number;
+    player_xp_needed_current_level: number;
+  };
 }

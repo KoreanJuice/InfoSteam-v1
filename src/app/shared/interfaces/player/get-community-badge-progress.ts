@@ -1,3 +1,5 @@
 export interface GetCommunityBadgeProgress {
-  any: any;
+  response: {
+    any: any;
+  };
 }

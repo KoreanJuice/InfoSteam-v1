@@ -1,3 +1,7 @@
 export interface GetUserStatsForGame {
-  any: any;
+  playerstats: {
+    steamID: string;
+    gameName: string;
+    achievements: any;
+  };
 }

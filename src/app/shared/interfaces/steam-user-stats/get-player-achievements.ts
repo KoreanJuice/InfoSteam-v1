@@ -1,3 +1,14 @@
 export interface GetPlayerAchievements {
-  any: any;
+  playerstats: {
+    steamID: string;
+    gameName: string;
+    achievements: [
+      {
+        apiname: string;
+        achieved: number;
+        unlocktime: number;
+      }
+    ];
+    success: boolean;
+  };
 }

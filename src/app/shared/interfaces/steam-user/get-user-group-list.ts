@@ -1,3 +1,10 @@
 export interface GetUserGroupList {
-  any: any;
+  response: {
+    success: boolean;
+    groups: [
+      {
+        gid: string;
+      }
+    ]
+  };
 }
