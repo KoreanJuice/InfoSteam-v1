@@ -47,6 +47,9 @@ export class RecommendedGamesComponent implements OnInit {
       console.error('error while retrieving game data', error);
     }
   }
+  // TODO: http interceptor(?)
+  // isValidImage(): boolean {
+  // }
 
   onClickEmpty(): void {
 

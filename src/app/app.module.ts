@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { material } from './shared/material/material';
 // Pages components
 import { HomeComponent } from './pages/home/home.component';
+import { NewsComponent } from './pages/news/news.component';
 import { GameComponent } from './pages/game/game.component';
 import { UserComponent } from './pages/user/user.component';
 import { GameDetailComponent } from './pages/game-detail/game-detail.component';
@@ -19,6 +20,7 @@ import { HelpComponent } from './pages/help/help.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 // Components
 import { AppComponent } from './app.component';
+import { GameNewsComponent } from './components/game-news/game-news.component';
 import { MostPlayedGamesComponent } from './components/most-played-games/most-played-games.component';
 import { RecommendedGamesComponent } from './components/recommended-games/recommended-games.component';
 import { GameDataComponent } from './components/game-data/game-data.component';
@@ -27,6 +29,7 @@ import { GameSearchComponent } from './components/game-search/game-search.compon
 import { UserSearchComponent } from './components/user-search/user-search.component';
 // Pipes
 import { ParseUserSearchPipe } from './shared/pipes/parse-user-search.pipe';
+import { CleanSearchPipe } from './shared/pipes/clean-search.pipe';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { ParseUserSearchPipe } from './shared/pipes/parse-user-search.pipe';
     GameSearchComponent,
     UserSearchComponent,
     ParseUserSearchPipe,
+    CleanSearchPipe,
+    NewsComponent,
+    GameNewsComponent,
   ],
   imports: [
     BrowserModule,

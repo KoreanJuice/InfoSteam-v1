@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // Pages components
 import { HomeComponent } from './pages/home/home.component';
+import { NewsComponent } from './pages/news/news.component';
 import { UserComponent } from './pages/user/user.component';
 import { GameComponent } from './pages/game/game.component';
 import { GameDetailComponent } from './pages/game-detail/game-detail.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'news',
+    component: NewsComponent,
   },
   {
     path: 'user',
