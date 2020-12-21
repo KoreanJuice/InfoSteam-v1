@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import * as config from '../../../config.json';
 import { AbstractSteamNewsService } from '../abstract-services/abstract-steam-news-service';
@@ -18,16 +17,24 @@ export class SteamNewsService extends AbstractSteamNewsService {
   ) {
     super();
   }
-
-  getNewsForApp(appid: number, maxlength?: number, enddate?: number, count?: number, feeds?: string): Observable<GetNewsForApp> {
+  /**
+   * Get the news for the specified app.
+   * @param appid AppID to retrieve news for
+   * @param count # of posts to retrieve (default 20)
+   * @param maxlength Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.
+   * @param enddate Retrieve posts earlier than this date (unix epoch timestamp)
+   * @param feeds Comma-seperated list of feed names to return news for
+   */
+  getNewsForApp(appid: number, count?: number, maxlength?: number, enddate?: number, feeds?: string): Promise<GetNewsForApp> {
     let urlParams = '';
+    if (count) { urlParams += `&count=${count}`; }
     if (maxlength) { urlParams += `&maxlength=${maxlength}`; }
     if (enddate) { urlParams += `&enddate=${enddate}`; }
-    if (count) { urlParams += `&count=${count}`; }
     if (feeds) { urlParams += `&feeds=${feeds}`; }
 
     return this.http
-      .get<GetNewsForApp>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetNewsForApp/v2/?appid=${appid}${urlParams}`);
+      .get<GetNewsForApp>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetNewsForApp/v2/?appid=${appid}${urlParams}`)
+      .toPromise();
   }
 
 }

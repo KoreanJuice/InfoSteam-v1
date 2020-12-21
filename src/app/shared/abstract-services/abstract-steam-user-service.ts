@@ -1,5 +1,3 @@
-import { Observable } from 'rxjs';
-
 import { GetFriendList } from '../interfaces/steam-user/get-friend-list';
 import { GetPlayerBans } from '../interfaces/steam-user/get-player-bans';
 import { GetPlayerSummaries } from '../interfaces/steam-user/get-player-summaries';
@@ -8,14 +6,14 @@ import { ResolveVanityUrl } from '../interfaces/steam-user/resolve-vanity-url';
 
 export abstract class AbstractSteamUserService {
 
-  abstract getFriendList(steamid: number, relationship?: string): Observable<GetFriendList>;
+  abstract getFriendList(steamid: number, relationship?: string): Promise<GetFriendList>;
 
-  abstract getPlayerBans(steamids: string): Observable<GetPlayerBans>;
+  abstract getPlayerBans(steamids: string): Promise<GetPlayerBans>;
 
-  abstract getPlayerSummaries(steamids: string): Observable<GetPlayerSummaries>;
+  abstract getPlayerSummaries(steamids: string): Promise<GetPlayerSummaries>;
 
-  abstract getUserGroupList(steamid: number): Observable<GetUserGroupList>;
+  abstract getUserGroupList(steamid: number): Promise<GetUserGroupList>;
 
-  abstract resolveVanityURL(vanityurl: string, urlType?: number): Observable<ResolveVanityUrl>;
+  abstract resolveVanityURL(vanityurl: string, urlType?: number): Promise<ResolveVanityUrl>;
 
 }

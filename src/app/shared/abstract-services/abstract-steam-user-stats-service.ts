@@ -1,5 +1,3 @@
-import { Observable } from 'rxjs';
-
 import { GetGlobalAchievementPercentagesForApp } from '../interfaces/steam-user-stats/get-global-achievement-percentages-for-app';
 import { GetGlobalStatsForGame } from '../interfaces/steam-user-stats/get-global-stats-for-game';
 import { GetNumberOfCurrentPlayers } from '../interfaces/steam-user-stats/get-number-of-current-players';
@@ -9,16 +7,16 @@ import { GetUserStatsForGame } from '../interfaces/steam-user-stats/get-user-sta
 
 export abstract class AbstractSteamUserStatsService {
 
-  abstract getGlobalAchievementPercentagesForApp(gameid: number): Observable<GetGlobalAchievementPercentagesForApp>;
+  abstract getGlobalAchievementPercentagesForApp(gameid: number): Promise<GetGlobalAchievementPercentagesForApp>;
 
-  abstract getGlobalStatsForGame(appid: number, count: number, statName: string, startdate?: number, enddate?: number): Observable<GetGlobalStatsForGame>;
+  abstract getGlobalStatsForGame(appid: number, count: number, statName: string, startdate?: number, enddate?: number): Promise<GetGlobalStatsForGame>;
 
-  abstract getNumberOfCurrentPlayers(appid: number): Observable<GetNumberOfCurrentPlayers>;
+  abstract getNumberOfCurrentPlayers(appid: number): Promise<GetNumberOfCurrentPlayers>;
 
-  abstract getPlayerAchievements(steamid: number, appid: number, lang?: string): Observable<GetPlayerAchievements>;
+  abstract getPlayerAchievements(steamid: number, appid: number, lang?: string): Promise<GetPlayerAchievements>;
 
-  abstract getSchemaForGame(appid: number, lang?: string): Observable<GetSchemaForGame>;
+  abstract getSchemaForGame(appid: number, lang?: string): Promise<GetSchemaForGame>;
 
-  abstract getUserStatsForGame(steamid: number, appid: number): Observable<GetUserStatsForGame>;
+  abstract getUserStatsForGame(steamid: number, appid: number): Promise<GetUserStatsForGame>;
 
 }

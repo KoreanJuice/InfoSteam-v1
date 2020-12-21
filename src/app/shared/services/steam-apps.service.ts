@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { key } from '../../../key';
 import * as config from '../../../config.json';
@@ -21,20 +20,31 @@ export class SteamAppsService extends AbstractSteamAppsService {
   ) {
     super();
   }
-
-  getAppList(): Observable<GetAppList> {
+  /**
+   * Gets the complete list of public apps.
+   * @output applist: { apps: [{ appid: number, name: string }] }
+   */
+  getAppList(): Promise<GetAppList> {
     return this.http
-      .get<GetAppList>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetAppList/v2/`);
+      .get<GetAppList>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetAppList/v2/`)
+      .toPromise();
   }
-
-  getServersAtAddress(addr: string): Observable<GetServersAtAddress> {
+  /**
+   * @param addr IP or IP:queryport to list
+   */
+  getServersAtAddress(addr: string): Promise<GetServersAtAddress> {
     return this.http
-      .get<GetServersAtAddress>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetServersAtAddress/v1/?addr=${addr}`);
+      .get<GetServersAtAddress>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetServersAtAddress/v1/?addr=${addr}`)
+      .toPromise();
   }
-
-  upToDateCheck(appid: number, version: number): Observable<UpToDateCheck> {
+  /**
+   * @param appid AppID of game
+   * @param version The installed version of the game
+   */
+  upToDateCheck(appid: number, version: number): Promise<UpToDateCheck> {
     return this.http
-      .get<UpToDateCheck>(`${config.STEAM_API_URL}/${this.INTERFACE}/UpToDateCheck/v1/?appid=${appid}&version=${version}`);
+      .get<UpToDateCheck>(`${config.STEAM_API_URL}/${this.INTERFACE}/UpToDateCheck/v1/?appid=${appid}&version=${version}`)
+      .toPromise();
   }
 
 }

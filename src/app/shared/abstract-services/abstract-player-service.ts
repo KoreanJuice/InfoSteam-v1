@@ -1,5 +1,3 @@
-import { Observable } from 'rxjs';
-
 import { GetRecentlyPlayedGames } from '../interfaces/player/get-recently-played-games';
 import { GetOwnedGames } from '../interfaces/player/get-owned-games';
 import { GetSteamLevel } from '../interfaces/player/get-steam-level';
@@ -9,16 +7,16 @@ import { IsPlayingSharedGame } from '../interfaces/player/is-playing-shared-game
 
 export abstract class AbstractPlayerService {
 
-  abstract getRecentlyPlayedGames(steamid: number, count?: number): Observable<GetRecentlyPlayedGames>;
+  abstract getRecentlyPlayedGames(steamid: number, count?: number): Promise<GetRecentlyPlayedGames>;
 
-  abstract getOwnedGames(steamid: number, includeAppinfo: boolean, includePlayedFreeGames?: boolean, appidsFilter?: number): Observable<GetOwnedGames>;
+  abstract getOwnedGames(steamid: number, includeAppinfo: boolean, includePlayedFreeGames?: boolean, appidsFilter?: number): Promise<GetOwnedGames>;
 
-  abstract getSteamLevel(steamid: number): Observable<GetSteamLevel>;
+  abstract getSteamLevel(steamid: number): Promise<GetSteamLevel>;
 
-  abstract getBadges(steamid: number): Observable<GetBadges>;
+  abstract getBadges(steamid: number): Promise<GetBadges>;
 
-  abstract getCommunityBadgeProgress(steamid: number, badgeid: number): Observable<GetCommunityBadgeProgress>;
+  abstract getCommunityBadgeProgress(steamid: number, badgeid: number): Promise<GetCommunityBadgeProgress>;
 
-  abstract isPlayingSharedGame(steamid: number, appidPlaying: number): Observable<IsPlayingSharedGame>;
+  abstract isPlayingSharedGame(steamid: number, appidPlaying: number): Promise<IsPlayingSharedGame>;
 
 }
