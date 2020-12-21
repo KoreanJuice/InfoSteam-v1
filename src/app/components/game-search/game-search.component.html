@@ -2,11 +2,12 @@
     <form [formGroup]="form">
         <mat-form-field appearance="standard" class="searchBar">
             <mat-label>Game search</mat-label>
-            <input matInput formControlName="search" placeholder="appid">
-            <button matSuffix mat-raised-button (click)="onSaveClick()">
+            <input matInput formControlName="gameSearch" placeholder="appid: 524220, 237930, ...">
+            <button matSuffix mat-raised-button (click)="onSendClick()">
                 <i class="fas fa-search"></i>
             </button>
-            <mat-hint>Search game.</mat-hint>
+            <mat-error>Format for appid is numeric (524220, 237930, ...)</mat-error>
+            <mat-hint>Search a game.</mat-hint>
         </mat-form-field>
     </form>
 </div>

@@ -26,7 +26,7 @@ export class PlayerService extends AbstractPlayerService {
   }
 
   getRecentlyPlayedGames(steamid: number, count?: number): Observable<GetRecentlyPlayedGames> {
-    let urlParams: string;
+    let urlParams = '';
     if (count) { urlParams += `&count=${count}`; }
 
     return this.http
@@ -34,8 +34,8 @@ export class PlayerService extends AbstractPlayerService {
   }
 
   getOwnedGames(steamid: number, includeAppinfo: boolean, includePlayedFreeGames?: boolean, appidsFilter?: number): Observable<GetOwnedGames> {
-    let urlParams: string;
-    if (includePlayedFreeGames) { urlParams += `&include_played_free_games=${includePlayedFreeGames}`; }
+    let urlParams = '';
+    if (includePlayedFreeGames !== undefined) { urlParams += `&include_played_free_games=${includePlayedFreeGames}`; }
     if (appidsFilter) { urlParams += `&appids_filter=${appidsFilter}`; }
 
     return this.http

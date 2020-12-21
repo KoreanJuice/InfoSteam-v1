@@ -10,5 +10,13 @@ h2 {
 }
 
 .btnBack {
-    text-decoration: underline;
+    width: fit-content;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: $sidenav-bg-color;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: $extra-color;
+    }
 }

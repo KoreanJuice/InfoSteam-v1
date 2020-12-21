@@ -25,7 +25,7 @@ export class SteamUserService extends AbstractSteamUserService {
   }
 
   getFriendList(steamid: number, relationship?: string): Observable<GetFriendList> {
-    let urlParams: string;
+    let urlParams = '';
     if (relationship) { urlParams += `&relationship=${relationship}`; }
 
     return this.http
@@ -48,7 +48,7 @@ export class SteamUserService extends AbstractSteamUserService {
   }
 
   resolveVanityURL(vanityUrl: string, urlType?: number): Observable<ResolveVanityUrl> {
-    let urlParams: string;
+    let urlParams = '';
     if (urlType) { urlParams += `&url_type=${urlType}`; }
 
     return this.http

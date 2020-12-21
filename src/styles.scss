@@ -31,8 +31,10 @@ body {
 .bodyBgColor { background-color: $body-bg-color; }
 .extraBgColor { background-color: $extra-color; }
 
-.pointer { cursor: pointer; }
-[class*="btn"] { cursor: pointer; }
+[class*="btn"] {
+    cursor: pointer;
+    outline: none;
+}
 
 /*
     ---------

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-game-search',
@@ -8,9 +8,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class GameSearchComponent implements OnInit {
 
-  @Output() search: EventEmitter<string>;
+  @Output() gameSearch = new EventEmitter<any>();
 
-  form: FormGroup;
+  public form: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -21,13 +21,16 @@ export class GameSearchComponent implements OnInit {
   }
 
   private formInit(): void {
-    this.form = this.fb.group({ search: [''] });
+    this.form = this.fb.group({ gameSearch: ['', Validators.pattern(/([0-9])+/g)] });
   }
 
-  onSaveClick(): void {
+  onSendClick(): void {
     if (this.form.valid) {
-      const search: string = this.form.get('search').value;
+      const gameSearch: number = this.form.get('gameSearch').value;
 
+      this.gameSearch.emit({
+        gameSearch
+      });
     }
   }
 

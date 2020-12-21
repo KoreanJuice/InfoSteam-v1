@@ -20,7 +20,7 @@ export class SteamNewsService extends AbstractSteamNewsService {
   }
 
   getNewsForApp(appid: number, maxlength?: number, enddate?: number, count?: number, feeds?: string): Observable<GetNewsForApp> {
-    let urlParams: string;
+    let urlParams = '';
     if (maxlength) { urlParams += `&maxlength=${maxlength}`; }
     if (enddate) { urlParams += `&enddate=${enddate}`; }
     if (count) { urlParams += `&count=${count}`; }

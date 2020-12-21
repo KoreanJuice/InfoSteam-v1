@@ -1,7 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
-import { SteamUserService } from '../../shared/services/steam-user.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-search',
@@ -10,13 +8,12 @@ import { SteamUserService } from '../../shared/services/steam-user.service';
 })
 export class UserSearchComponent implements OnInit {
 
-  @Output() search: EventEmitter<string>;
+  @Output() userSearch = new EventEmitter<any>();
 
-  form: FormGroup;
+  public form: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private steamUser: SteamUserService,
   ) { }
 
   ngOnInit(): void {
@@ -24,18 +21,16 @@ export class UserSearchComponent implements OnInit {
   }
 
   private formInit(): void {
-    this.form = this.fb.group({ search: [''] });
+    this.form = this.fb.group({ userSearch: ['', Validators.pattern(/([0-9])+/g)] });
   }
 
-  onSaveClick(): void {
+  onSendClick(): void {
     if (this.form.valid) {
-      const search: string = this.form.get('search').value;
+      const userSearch: string = this.form.get('userSearch').value;
 
-      this.steamUser.resolveVanityURL(search)
-        .subscribe(vanityUrl => {
-          console.log('event', search);
-          console.log('vanityUrl', vanityUrl);
-        });
+      this.userSearch.emit({
+        userSearch
+      });
     }
   }
 

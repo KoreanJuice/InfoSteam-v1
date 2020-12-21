@@ -31,7 +31,7 @@ export class SteamUserStatsService extends AbstractSteamUserStatsService {
   }
 
   getGlobalStatsForGame(appid: number, count: number, statName: string, startdate?: number, enddate?: number): Observable<GetGlobalStatsForGame> {
-    let urlParams: string;
+    let urlParams = '';
     if (startdate) { urlParams += `&startdate=${startdate}`; }
     if (enddate) { urlParams += `&enddate=${enddate}`; }
 
@@ -45,7 +45,7 @@ export class SteamUserStatsService extends AbstractSteamUserStatsService {
   }
 
   getPlayerAchievements(steamid: number, appid: number, lang?: string): Observable<GetPlayerAchievements> {
-    let urlParams: string;
+    let urlParams = '';
     if (lang) { urlParams += `&l=${lang}`; }
 
     return this.http
@@ -53,7 +53,7 @@ export class SteamUserStatsService extends AbstractSteamUserStatsService {
   }
 
   getSchemaForGame(appid: number, lang?: string): Observable<GetSchemaForGame> {
-    let urlParams: string;
+    let urlParams = '';
     if (lang) { urlParams += `&l=${lang}`; }
 
     return this.http

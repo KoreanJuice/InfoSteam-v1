@@ -2,11 +2,12 @@
     <form [formGroup]="form">
         <mat-form-field appearance="standard" class="searchBar">
             <mat-label>User search</mat-label>
-            <input matInput formControlName="search" placeholder="Username / steamid">
-            <button matSuffix mat-raised-button (click)="onSaveClick()">
+            <input matInput formControlName="userSearch" placeholder="steamid">
+            <button matSuffix mat-raised-button (click)="onSendClick()">
                 <i class="fas fa-search"></i>
             </button>
-            <mat-hint>Search user.</mat-hint>
+            <mat-error>Format for steamid is numeric.</mat-error>
+            <mat-hint>Search a user.</mat-hint>
         </mat-form-field>
     </form>
 </div>

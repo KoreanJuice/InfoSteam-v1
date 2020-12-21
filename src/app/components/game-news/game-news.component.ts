@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameNewsComponent implements OnInit {
 
+  gameData: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.gameData = true;
   }
 
 }

@@ -18,10 +18,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 // Components
 import { AppComponent } from './app.component';
 import { GameNewsComponent } from './components/game-news/game-news.component';
-import { MostPlayedGamesComponent } from './components/most-played-games/most-played-games.component';
 import { RecommendedGamesComponent } from './components/recommended-games/recommended-games.component';
-import { GameDataComponent } from './components/game-data/game-data.component';
-import { UserDataComponent } from './components/user-data/user-data.component';
 import { GameSearchComponent } from './components/game-search/game-search.component';
 import { UserSearchComponent } from './components/user-search/user-search.component';
 // Pipes
@@ -32,12 +29,9 @@ import { CleanSearchPipe } from './shared/pipes/clean-search.pipe';
   declarations: [
     AppComponent,
     HomeComponent,
-    MostPlayedGamesComponent,
     RecommendedGamesComponent,
     LegalComponent,
     HelpComponent,
-    GameDataComponent,
-    UserDataComponent,
     GameDetailComponent,
     UserDetailComponent,
     PageNotFoundComponent,
