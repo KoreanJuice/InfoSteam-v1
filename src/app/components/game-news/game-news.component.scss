@@ -7,12 +7,67 @@
 */
 
 .news-card {
-    display: flex;
-    flex-direction: column;
+    margin: 1em 0;
 
+    .title {
+        text-align: center;
+    }
+
+    .news-content {
+        .author {
+            margin: 1em 0;
+            font-weight: 500;
+
+            .thin {
+                font-weight: 400;
+                margin-right: 5px;
+            }
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1em 0;
+            
+            div:first-child {
+                padding: 0.5em 0;
+            }
+
+            .tag {
+                width: fit-content;
+                margin: 0.3em;
+                padding: .5em;
+                border-radius: 15px;
+                background-color: $extra-color;
+                cursor: default
+            }
+        }
+
+        .content {
+            margin: 0 0 1em;
+            padding: 1em;
+            line-height: 1.5;
+            border-radius: 5px;
+            background-color: $extra-color;
+            overflow-y: auto;
+        }
+        
+        .footer {
+            text-align: center;
+
+            .link {
+                text-decoration: none;
+                
+                .fas {
+                    font-size: 0.5em;
+                    vertical-align: super;
+                }
+            }
+        }
+    }
 }
 
-.game-empty {
+.news-empty {
     text-align: center;
     height: 15px;
 }
@@ -24,5 +79,12 @@
 */
 
 @media only screen and (min-width: 768px) {
+    .component-container {
+        margin: 1em auto;
+        width: 80%;
+    }
+}
 
+@media only screen and (min-width: 1024px) {
+    .component-container { width: 70%; }
 }

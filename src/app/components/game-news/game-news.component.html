@@ -1,8 +1,33 @@
 <div class="component-container">
-    <mat-card *ngIf="gameData">
-        <mat-card-title>OwO</mat-card-title>
-        <mat-card-content class="news-card">
-            content
-        </mat-card-content>
-    </mat-card>
+    <div *ngIf="gameNews; else newsEmpty">
+        <mat-card *ngFor="let news of gameNews.appnews.newsitems" class="news-card">
+            <mat-card-title class="title">{{ news.title | titlecase}}</mat-card-title>
+            <mat-card-content class="news-content">
+                <p class="author"><span class="thin">Author:</span>{{news.author}}</p>
+
+                <div *ngIf="news.tags" class="tags">
+                    <div>Tags:&nbsp;</div>
+                    <div *ngFor="let tag of news.tags" class="tag">{{tag}}</div>
+                </div>
+
+                <div class="content">
+                    {{news.contents}}
+                </div>
+
+                <div class="footer">
+                    <a href="{{news.url}}" target="_blank" class="link infoColor">
+                        Follow the news <i class="fas fa-external-link-alt infoColor"></i>
+                    </a>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <ng-template #newsEmpty>
+        <div>
+            <mat-card class="news-empty">
+                <p>We could not fetch any news for game right now.</p>
+            </mat-card>
+        </div>
+    </ng-template>
 </div>
