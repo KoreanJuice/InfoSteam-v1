@@ -19,7 +19,7 @@
         justify-content: space-between;
         font-weight: 400;
         
-        .title {
+        .link {
             margin: auto 0;
             font-size: 1.2em;
             text-decoration: none;
@@ -56,7 +56,7 @@
 @media only screen and (min-width: 768px) {
     .component-container {
         margin: 1em auto;
-        width: 70%;
+        width: 80%;
     }
 
     .game-card {
@@ -76,7 +76,7 @@
             font-size: 1.5em;
             margin: auto;
             
-            .title {
+            .link {
                 text-decoration: none;
             }
         }
@@ -93,4 +93,8 @@
             }
         }
     }
+}
+
+@media only screen and (min-width: 1024px) {
+    .component-container { width: 70%; }
 }

@@ -20,9 +20,13 @@
     ---------
 */
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
     .component-container {
-        width: 50%;
         margin: auto;
+        width: 80%;
     }
+}
+
+@media only screen and (min-width: 1024px) {
+    .component-container { width: 50%; }
 }
