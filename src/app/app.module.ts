@@ -21,6 +21,7 @@ import { GameNewsComponent } from './components/game-news/game-news.component';
 import { RecommendedGamesComponent } from './components/recommended-games/recommended-games.component';
 import { GameSearchComponent } from './components/game-search/game-search.component';
 import { UserSearchComponent } from './components/user-search/user-search.component';
+import { RecentGamesComponent } from './components/recent-games/recent-games.component';
 // Pipes
 import { ParseUserSearchPipe } from './shared/pipes/parse-user-search.pipe';
 import { CleanSearchPipe } from './shared/pipes/clean-search.pipe';
@@ -41,6 +42,7 @@ import { CleanSearchPipe } from './shared/pipes/clean-search.pipe';
     CleanSearchPipe,
     NewsComponent,
     GameNewsComponent,
+    RecentGamesComponent,
   ],
   imports: [
     BrowserModule,
