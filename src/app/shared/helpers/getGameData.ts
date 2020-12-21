@@ -4,13 +4,13 @@ import { headerImgUrl } from './headerImgUrl';
 
 export async function getGameData(appid: number, steamUserStats: SteamUserStatsService, steamApps: SteamAppsService): Promise<any> {
   try {
-    const { applist: { apps } } = await steamApps.getAppList().toPromise();
+    const { applist: { apps } } = await steamApps.getAppList();
 
     const { name } = apps.find((app) => app.appid === appid);
 
-    const { game } = await steamUserStats.getSchemaForGame(appid).toPromise();
+    const { game } = await steamUserStats.getSchemaForGame(appid);
 
-    const { response: { player_count } } = await steamUserStats.getNumberOfCurrentPlayers(appid).toPromise();
+    const { response: { player_count } } = await steamUserStats.getNumberOfCurrentPlayers(appid);
 
     const gameImage = await headerImgUrl(appid);
 

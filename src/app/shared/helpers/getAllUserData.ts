@@ -10,13 +10,13 @@ import { SteamUserService } from '../services/steam-user.service';
 
 export async function getAllUserData(steamid: number, steamUser: SteamUserService, player: PlayerService, appid: number, steamUserStats: SteamUserStatsService): Promise<any> {
   try {
-    const { response: { players } } = await steamUser.getPlayerSummaries(steamid.toString()).toPromise();
+    const { response: { players } } = await steamUser.getPlayerSummaries(steamid.toString());
 
-    const { response: { badges, player_level } } = await player.getBadges(steamid).toPromise();
+    const { response: { badges, player_level } } = await player.getBadges(steamid);
 
-    const { response: { game_count, games } } = await player.getOwnedGames(steamid, true, false).toPromise();
+    const { response: { game_count, games } } = await player.getOwnedGames(steamid, true, false);
 
-    const { playerstats: { achievements } } = await steamUserStats.getUserStatsForGame(steamid, appid).toPromise();
+    const { playerstats: { achievements } } = await steamUserStats.getUserStatsForGame(steamid, appid);
 
     return {
       player: { ...players }[0],

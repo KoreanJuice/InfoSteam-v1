@@ -22,7 +22,7 @@ export class SteamAppsService extends AbstractSteamAppsService {
   }
   /**
    * Gets the complete list of public apps.
-   * @output applist: { apps: [{ appid: number, name: string }] }
+   * @return IGetAppList => applist: { apps: [{ appid: number, name: string }] }
    */
   getAppList(): Promise<GetAppList> {
     return this.http
