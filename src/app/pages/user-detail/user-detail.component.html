@@ -1,13 +1,72 @@
 <div class="page-container">
-    <h1>User detail!</h1>
-
     <div *ngIf="userData" class="user">
-        <p><b>player_level: </b>{{userData.player_level}}</p>
-        <p><b>game_count: </b>{{userData.game_count}}</p>
-        <p><b>player: </b>{{userData.player.personaname}}</p>
-        <mat-divider></mat-divider>
-        <p *ngFor="let friend of userData.friends.players">
-            <b>friend: </b>{{friend.personaname}}
-        </p>
+
+        <div class="data">
+            <div class="image">
+                <img src="{{userData.player.avatarmedium}}" alt="{{userData.player.personaname}} steam profile picture"
+                    class="avatarmedium">
+                <img src="{{userData.player.avatarfull}}" alt="{{userData.player.personaname}} steam profile picture"
+                    class="avatarfull">
+            </div>
+
+            <div class="info">
+                <div class="main">
+                    <span>{{userData.player.personaname | titlecase}}</span>
+                    <span>{{userData.player.loccountrycode}}</span>
+                    <span *ngIf="userData.player.personastate === 1; else userOffline"
+                        class="state successColor">Online</span>
+                    <ng-template #userOffline>
+                        <span class="state errorColor">Offline</span>
+                    </ng-template>
+                </div>
+
+                <div>
+                    Steam id {{userData.player.steamid}}&nbsp;
+                    <i class="fab fa-steam-symbol"></i>
+                </div>
+
+                <div>
+                    <a href="{{userData.player.profileurl}}" target="_blank" class="link infoColor">
+                        Steam profile&nbsp;
+                        <i class="fas fa-external-link-alt infoColor"></i>
+                    </a>
+                </div>
+
+                <div class="perfectColor">
+                    Level {{userData.player_level}}&nbsp;
+                    <i class="fab fa-ethereum perfectColor"></i>
+                </div>
+
+                <div class="successColor">
+                    Owned Games {{userData.game_count}}&nbsp;
+                    <i class="fas fa-gamepad successColor"></i>
+                </div>
+            </div>
+        </div>
+
+        <mat-card class="friends-card">
+            <mat-card-content>
+                <div *ngFor="let friend of userData.friends.players" class="friend extraBgColor">
+                    <div class="friend-image">
+                        <img src="{{friend.avatar}}" alt="{{friend.personaname}} avatar">
+                    </div>
+                    <div class="friend-name">{{friend.personaname}}</div>
+                    <div class="friend-url infoColor">
+                        <a href="{{friend.profileurl}}" target="_blank" class="link infoColor">
+                            Profile&nbsp;
+                            <i class="fas fa-external-link-alt infoColor"></i>
+                        </a>
+                    </div>
+                    <div class="friend-state">
+                        <span *ngIf="friend.personastate === 1; else userOffline" class="successColor">Online</span>
+                        <ng-template #userOffline>
+                            <span class="errorColor">Offline</span>
+                        </ng-template>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <app-recent-games></app-recent-games>
     </div>
 </div>

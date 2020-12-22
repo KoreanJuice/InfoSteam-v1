@@ -1,0 +1,133 @@
+@import '../../../variables';
+
+/*
+    ---------
+    MAIN CONTENT
+    ---------
+*/
+
+.page-container {
+    .image {
+        margin-bottom: 1em;
+        .avatarfull { display: none; }
+    }
+
+    .info {
+        margin: 1em auto;
+        .main {
+            text-align: center;
+            span:first-child { margin-right: 1em; }
+            span:last-child { margin-left: 1em; }
+        }
+
+        div {
+            margin: 0.5em 0;
+
+            .fas {
+                font-size: 0.9em;
+            }
+
+            .link {
+                text-decoration: none;
+
+                .fas {
+                    font-size: 0.5em;
+                    vertical-align: super;
+                }
+            }
+        }
+    }
+
+    .friends-card {
+        margin: 1em auto;
+        height: 30vh;
+        
+        mat-card-content {
+            height: 30vh;
+            overflow-x: auto;
+
+            .friend {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                height: 50px;
+                margin-bottom: 0.5em;
+                padding: 0 2em;
+                border-radius: 5px;
+                &:last-child { margin-bottom: 0; }
+                div { margin: auto 0; }
+                .friend-url {
+                    display: none;
+                    .link {
+                        text-decoration: none;
+        
+                        .fas {
+                            font-size: 0.5em;
+                            vertical-align: super;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+    ---------
+    RESPONSIVE
+    ---------
+*/
+
+@media only screen and (min-width: 768px) {
+    .page-container {
+        .data {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 80%;
+            margin: auto;
+
+            .image {
+                width: 60%;
+                align-self: flex-end;
+                margin-bottom: 0;
+                .avatarmedium { display: none; }
+                .avatarfull { display: inline; }
+            }
+            
+            .info {
+                width: 50%;
+                margin: 0;
+                text-align: left;
+                align-self: center;
+                .main { text-align: left; }
+                div {
+                    margin: .75em 0;
+                    &:first-child { margin-top: 0; }
+                    &:last-child { margin-bottom: 0; }
+                }
+            }
+        }
+
+        .friends-card {
+            width: 80%;
+            mat-card-content {
+                .friend {
+                    padding: 0 5em;
+                    .friend-url { display: block; }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .page-container {
+        .data { width: 70%; }
+        .friends-card {
+            width: 70%;
+            mat-card-content {
+                .friend { padding: 0 10em; }
+            }
+        }
+    }
+}

@@ -14,25 +14,30 @@
 
             <div class="info">
                 <div>
-                    Steam appid: {{gameData.appid}}&nbsp;
+                    Steam appid {{gameData.appid}}&nbsp;
                     <i class="fab fa-steam-symbol"></i>
                 </div>
+
                 <div>
-                    Game version: {{gameData.gameVersion}}&nbsp;
+                    Game ver. {{gameData.gameVersion}}&nbsp;
                     <i class="fas fa-code-branch"></i>
                 </div>
+
                 <div>
                     <a href="https://store.steampowered.com/app/{{gameData.appid}}" target="_blank"
                         class="link infoColor">
-                        Steam store&nbsp;<i class="fas fa-external-link-alt infoColor"></i>
+                        Steam store&nbsp;
+                        <i class="fas fa-external-link-alt infoColor"></i>
                     </a>
                 </div>
+
                 <div class="successColor">
-                    Active players: {{gameData.player_count}}&nbsp;
+                    Active players {{gameData.player_count}}&nbsp;
                     <i class="fas fa-users successColor"></i>
                 </div>
+
                 <div class="perfectColor">
-                    #Achievements: {{gameData.availableGameStats.achievements.length}}&nbsp;
+                    Achievements {{gameData.availableGameStats.achievements.length}}&nbsp;
                     <i class="fas fa-trophy perfectColor"></i>
                 </div>
             </div>
@@ -40,7 +45,7 @@
 
         <!-- <div class="achievement">
             <p *ngFor="let achievement of gameData.availableGameStats.achievements">
-                <b>achievement: </b>{{achievement.displayName}}
+                <b>achievement </b>{{achievement.displayName}}
             </p>
         </div> -->
 
