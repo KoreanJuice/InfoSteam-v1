@@ -1,0 +1,76 @@
+@import '../../../variables';
+
+/*
+    ---------
+    MAIN CONTENT
+    ---------
+*/
+
+.page-container {
+    .header-img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .info {
+        margin: 1em;
+
+        div {
+            margin: 0.5em 0;
+
+            .fas {
+                font-size: 0.9em;
+            }
+
+            .link {
+                text-decoration: none;
+
+                .fas {
+                    font-size: 0.5em;
+                    vertical-align: super;
+                }
+            }
+        }
+    }
+
+    .achievement {
+
+    }
+}
+
+/*
+    ---------
+    RESPONSIVE
+    ---------
+*/
+
+@media only screen and (min-width: 768px) {
+    .page-container {
+        .header-img { width: 80%; }
+        
+        .info {
+            width: 80%;
+            margin: 1em auto;
+
+            div {
+                margin: 0.5em 0;
+                
+                &:nth-child(odd) { text-align: left; }
+                &:nth-child(even) { text-align: right; }
+            }
+        }
+
+        .achievement {
+            width: 80%;
+            margin: 1em auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .page-container {
+        .header-img { width: 70%; }
+        .info { width: 70%; }
+        .achievement { width: 70%; }
+    }
+}

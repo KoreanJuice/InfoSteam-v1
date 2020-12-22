@@ -20,6 +20,9 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+h1 { font-weight: 500; }
+h2 { font-weight: 400; }
+
 .extraColor { color: $extra-color; }
 .perfectColor { color: $perfect-color; }
 .successColor { color: $success-color; }

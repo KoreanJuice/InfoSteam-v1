@@ -1,3 +1,44 @@
 <div class="page-container">
-    <h1>Game detail!</h1>
+    <div *ngIf="gameData" class="game">
+        <h1>{{gameData.gameName | titlecase}}</h1>
+
+        <img *ngIf="gameData.gameImage; else imageEmpty" class="header-img" src="{{gameData.gameImage}}"
+            alt="{{gameData.gameName}} image" title="{{gameData.gameName}}">
+        <ng-template #imageEmpty>
+            <img class="header-img" src="../../../assets/image-not-found.jpg" alt="image not found"
+                title="image not found">
+        </ng-template>
+
+        <div class="info">
+            <div>
+                Steam appid: {{gameData.appid}}&nbsp;
+                <i class="fab fa-steam-symbol"></i>
+            </div>
+            <div>
+                Game version: {{gameData.gameVersion}}&nbsp;
+                <i class="fas fa-code-branch"></i>
+            </div>
+            <div>
+                <a href="https://store.steampowered.com/app/{{gameData.appid}}" target="_blank" class="link infoColor">
+                    Steam store&nbsp;<i class="fas fa-external-link-alt infoColor"></i>
+                </a>
+            </div>
+            <div class="successColor">
+                Active players: {{gameData.player_count}}&nbsp;
+                <i class="fas fa-users successColor"></i>
+            </div>
+            <div class="perfectColor">
+                #Achievements: {{gameData.availableGameStats.achievements.length}}&nbsp;
+                <i class="fas fa-trophy perfectColor"></i>
+            </div>
+        </div>
+
+        <!-- <div class="achievement">
+            <p *ngFor="let achievement of gameData.availableGameStats.achievements">
+                <b>achievement: </b>{{achievement.displayName}}
+            </p>
+        </div> -->
+
+        <app-game-news></app-game-news>
+    </div>
 </div>

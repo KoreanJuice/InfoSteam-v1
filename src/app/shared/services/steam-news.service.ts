@@ -25,7 +25,7 @@ export class SteamNewsService extends AbstractSteamNewsService {
    * @param enddate Retrieve posts earlier than this date (unix epoch timestamp)
    * @param feeds Comma-seperated list of feed names to return news for
    */
-  getNewsForApp(appid: number, maxlength: number = 0, count: number = 5, enddate?: number, feeds?: string): Promise<GetNewsForApp> {
+  getNewsForApp(appid: number, maxlength: number = 0, count: number = 1, enddate?: number, feeds?: string): Promise<GetNewsForApp> {
     let urlParams = '';
     if (maxlength) { urlParams += `&maxlength=${maxlength}`; }
     if (count) { urlParams += `&count=${count}`; }

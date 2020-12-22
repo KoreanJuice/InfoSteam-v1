@@ -17,7 +17,7 @@ export class GameNewsComponent implements OnInit {
   ) { }
 
   async ngOnInit(): Promise<void> {
-    this.gameNews = await this.steamNews.getNewsForApp(524220);
+    this.gameNews = await this.steamNews.getNewsForApp(524220, 0, 1);
     console.log('game news: game news', this.gameNews);
   }
 
