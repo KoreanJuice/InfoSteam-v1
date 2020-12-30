@@ -1,3 +1,3 @@
 export interface GetServersAtAddress {
-  any: any;
+  // TODO: interface
 }

@@ -1,0 +1,122 @@
+@import '../../../variables';
+
+/*
+    ---------
+    CARD
+    ---------
+*/
+
+.game-card {
+    .game-image {
+        display: flex;
+        .header-img { width: 100%; }
+    }
+
+    .game-desc {
+        display: flex;
+        margin: 1em auto;
+        font-size: 1.1em;
+
+        .desc-link {
+            width: 60%;
+            text-align: left;
+
+            .link {
+                text-decoration: none;
+                .fas {
+                    font-size: 0.4em;
+                    vertical-align: super;
+                }
+            }
+            .innerLink { display: none; }
+        }
+
+        .desc-players,
+        .desc-achievements {
+            width: 20%;
+            text-align: right;
+        }
+    }
+
+    .achievements {
+        display: flex;
+        width: 100%;
+        overflow-y: auto;
+        img { margin-right: .5em; }
+    }
+}
+
+.game-empty {
+    text-align: center;
+    height: 15px;
+}
+
+/*
+    ---------
+    RESPONSIVE
+    ---------
+*/
+
+@media only screen and (min-width: 768px) {
+    .component-container {
+        margin: 1em auto;
+
+        mat-card { 
+            margin: 1em auto;
+            width: 80%;
+        }
+    }
+
+    
+    .game-card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        .data {
+            display: flex;
+            width: 100%;
+            margin-bottom: 1em;
+
+            .game-image { width: 40%; }
+            
+            .game-desc {
+                display: flex;
+                width: 60%;
+
+                .desc-link {
+                    display: flex;
+                    flex-flow: column;
+                    text-align: center;
+                    .link {
+                        margin: auto 0;
+                        text-align: center;
+                    }
+                    .innerLink { display: inline; }
+                }
+
+                .desc-players,
+                .desc-achievements {
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+
+            .achievements {
+                display: flex;
+                width: 100%;
+                overflow-y: auto;
+                align-self: flex-end;
+                margin-top: 1em;
+                img { margin-right: 0.5em; }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .component-container {
+        mat-card { width: 70%; }
+        .game-desc { font-size: 1.2em; }
+    }
+}

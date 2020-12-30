@@ -13,14 +13,22 @@ import { getUserData } from '../../shared/helpers/getUserData';
 export class UserDetailComponent implements OnInit {
 
   public userData: UserData;
+  public steamid: number;
+  public nGames: number;
 
   constructor(
     private steamUser: SteamUserService,
     private player: PlayerService,
   ) { }
 
-  async ngOnInit(): Promise<void> {
-    this.userData = await getUserData(76561198094709860, this.steamUser, this.player);
+  ngOnInit(): void {
+    this.steamid = 76561198094709860;
+    this.nGames = 3;
+    this.getGameData();
+  }
+
+  private async getGameData(): Promise<void> {
+    this.userData = await getUserData(this.steamid, this.steamUser, this.player);
     console.log('user detail: userData', this.userData);
   }
 

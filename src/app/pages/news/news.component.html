@@ -1,5 +1,5 @@
 <div class="page-container">
-    <app-game-search></app-game-search>
-    <!-- <h2 *ngIf="false">{{gameData.gameName | titlecase}}</h2> -->
-    <app-game-news></app-game-news>
+    <app-game-search (gameSearch)="gameSearch($event)"></app-game-search>
+    <h2 *ngIf="gameName">{{gameName | titlecase}}</h2>
+    <app-game-news [appid]="appid" [nNews]="nNews"></app-game-news>
 </div>

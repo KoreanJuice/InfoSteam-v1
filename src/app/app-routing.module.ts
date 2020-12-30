@@ -20,11 +20,11 @@ const routes: Routes = [
     component: NewsComponent,
   },
   {
-    path: 'user/:id',
+    path: 'user/:steamid',
     component: UserDetailComponent,
   },
   {
-    path: 'game/:id',
+    path: 'game/:appid',
     component: GameDetailComponent,
   },
   {

@@ -4,9 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'cleanSearch'
 })
 export class CleanSearchPipe implements PipeTransform {
-
-  transform(str: string): number {
-    return null;
+  // TODO: UNUSED. is this still relevant?
+  transform(str: string): string {
+    return str.trim().toLowerCase();
   }
 
 }

@@ -13,13 +13,21 @@ import { getGameData } from '../../shared/helpers/getGameData';
 export class GameDetailComponent implements OnInit {
 
   public gameData: GameData;
+  public nNews: number;
+  public appid: number;
 
   constructor(
     private steamUserStats: SteamUserStatsService,
     private steamApps: SteamAppsService,
   ) { }
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
+    this.nNews = 1;
+    this.appid = 524220;
+    this.getGameData();
+  }
+
+  private async getGameData(): Promise<void> {
     this.gameData = await getGameData(524220, this.steamUserStats, this.steamApps);
     console.log('user detail: gameData', this.gameData);
   }

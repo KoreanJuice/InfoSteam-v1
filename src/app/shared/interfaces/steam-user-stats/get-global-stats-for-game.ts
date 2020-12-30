@@ -1,3 +1,3 @@
 export interface GetGlobalStatsForGame {
-  any: any;
+  // TODO: interface
 }

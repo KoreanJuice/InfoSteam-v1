@@ -1,6 +1,6 @@
 import { PlayerService } from '../services/player.service';
 import { SteamUserService } from '../services/steam-user.service';
-
+// TODO: make interface
 export async function getUserData(steamid: number, steamUser: SteamUserService, player: PlayerService): Promise<any> {
   try {
     const { response: { players } } = await steamUser.getPlayerSummaries(steamid.toString());

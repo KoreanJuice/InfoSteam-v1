@@ -1,6 +1,6 @@
 export interface UpToDateCheck {
   response: {
-    any: any;
+    // TODO: interface
     success: boolean;
     error: string;
   };

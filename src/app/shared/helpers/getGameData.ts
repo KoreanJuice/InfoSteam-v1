@@ -1,7 +1,7 @@
 import { SteamAppsService } from '../services/steam-apps.service';
 import { SteamUserStatsService } from '../services/steam-user-stats.service';
 import { headerImgUrl } from './headerImgUrl';
-
+// TODO: make interface
 export async function getGameData(appid: number, steamUserStats: SteamUserStatsService, steamApps: SteamAppsService): Promise<any> {
   try {
     const { applist: { apps } } = await steamApps.getAppList();

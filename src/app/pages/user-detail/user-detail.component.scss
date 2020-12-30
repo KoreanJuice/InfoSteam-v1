@@ -52,15 +52,17 @@
                 justify-content: space-between;
                 height: 50px;
                 margin-bottom: 0.5em;
-                padding: 0 2em;
-                border-radius: 5px;
+                border-radius: 4px;
                 &:last-child { margin-bottom: 0; }
-                div { margin: auto 0; }
+                div {
+                    margin: auto 0;
+                    width: 33%;
+                }
                 .friend-url {
                     display: none;
                     .link {
                         text-decoration: none;
-        
+                        
                         .fas {
                             font-size: 0.5em;
                             vertical-align: super;
@@ -87,7 +89,7 @@
             margin: auto;
 
             .image {
-                width: 60%;
+                width: 50%;
                 align-self: flex-end;
                 margin-bottom: 0;
                 .avatarmedium { display: none; }
@@ -112,7 +114,7 @@
             width: 80%;
             mat-card-content {
                 .friend {
-                    padding: 0 5em;
+                    div { width: 25%; }
                     .friend-url { display: block; }
                 }
             }

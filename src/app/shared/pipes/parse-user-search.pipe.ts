@@ -4,9 +4,10 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'parseUserSearch'
 })
 export class ParseUserSearchPipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  // TODO: UNUSED. is this still relevant?
+  transform(str: string): string {
+    const nonDigitRegExp = /[^\d]+/g;
+    return str.match(nonDigitRegExp)[0];
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { SteamAppsService } from '../../shared/services/steam-apps.service';
 import { SteamUserStatsService } from '../../shared/services/steam-user-stats.service';
@@ -10,7 +10,8 @@ import { getGameData } from '../../shared/helpers/getGameData';
   styleUrls: ['./recommended-games.component.scss']
 })
 export class RecommendedGamesComponent implements OnInit {
-
+  // TODO: 
+  private recommendedGames: number[] = [524220, 237930, 312750, 987720];
   public gameData: any;
 
   constructor(
@@ -18,9 +19,14 @@ export class RecommendedGamesComponent implements OnInit {
     private steamApps: SteamAppsService,
   ) { }
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
+    this.getGameData();
+  }
+
+  private async getGameData(): Promise<void> {
     this.gameData = await getGameData(524220, this.steamUserStats, this.steamApps);
     console.log('recommended games: gameData', this.gameData);
+    console.log('recommended games: array - ', this.recommendedGames);
   }
 
 }

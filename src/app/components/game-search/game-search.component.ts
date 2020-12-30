@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class GameSearchComponent implements OnInit {
 
-  @Output() gameSearch = new EventEmitter<any>();
+  @Output() gameSearch = new EventEmitter<string>();
 
   public form: FormGroup;
 
@@ -21,16 +21,14 @@ export class GameSearchComponent implements OnInit {
   }
 
   private formInit(): void {
-    this.form = this.fb.group({ gameSearch: ['', Validators.pattern(/([0-9])+/g)] });
+    this.form = this.fb.group({ gameSearch: ['', Validators.pattern(/\d+/g)] });
   }
 
-  onSendClick(): void {
+  public onSendClick(): void {
     if (this.form.valid) {
-      const gameSearch: number = this.form.get('gameSearch').value;
+      const gameSearch: string = this.form.get('gameSearch').value;
 
-      this.gameSearch.emit({
-        gameSearch
-      });
+      this.gameSearch.emit(gameSearch);
     }
   }
 

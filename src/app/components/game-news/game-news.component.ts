@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 import { GetNewsForApp } from '../../shared/interfaces/steam-news/get-news-for-app';
 import { SteamNewsService } from '../../shared/services/steam-news.service';
@@ -8,7 +8,10 @@ import { SteamNewsService } from '../../shared/services/steam-news.service';
   templateUrl: './game-news.component.html',
   styleUrls: ['./game-news.component.scss']
 })
-export class GameNewsComponent implements OnInit {
+export class GameNewsComponent implements OnChanges {
+
+  @Input() nNews: number;
+  @Input() appid: number;
 
   public gameNews: GetNewsForApp;
 
@@ -16,9 +19,12 @@ export class GameNewsComponent implements OnInit {
     private steamNews: SteamNewsService,
   ) { }
 
-  async ngOnInit(): Promise<void> {
-    this.gameNews = await this.steamNews.getNewsForApp(524220, 0, 1);
-    console.log('game news: game news', this.gameNews);
+  ngOnChanges(): void {
+    if (this.appid) { this.getGameNews(); }
+  }
+
+  private async getGameNews(): Promise<void> {
+    this.gameNews = await this.steamNews.getNewsForApp(this.appid, 0, this.nNews);
   }
 
 }

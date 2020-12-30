@@ -11,7 +11,7 @@
 
     .header-img {
         width: 92%;
-        border-radius: 5px;
+        border-radius: 4px;
     }
 
     .info {
@@ -20,13 +20,10 @@
         div {
             margin: 0.5em 0;
 
-            .fas {
-                font-size: 0.9em;
-            }
-
+            .fas { font-size: 0.9em; }
+            
             .link {
                 text-decoration: none;
-
                 .fas {
                     font-size: 0.5em;
                     vertical-align: super;
@@ -35,9 +32,7 @@
         }
     }
 
-    .achievement {
-
-    }
+    // .achievement { }
 }
 
 /*

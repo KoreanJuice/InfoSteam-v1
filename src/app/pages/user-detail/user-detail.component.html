@@ -19,24 +19,20 @@
                         <span class="state errorColor">Offline</span>
                     </ng-template>
                 </div>
-
                 <div>
                     Steam id {{userData.player.steamid}}&nbsp;
                     <i class="fab fa-steam-symbol"></i>
                 </div>
-
                 <div>
                     <a href="{{userData.player.profileurl}}" target="_blank" class="link infoColor">
                         Steam profile&nbsp;
                         <i class="fas fa-external-link-alt infoColor"></i>
                     </a>
                 </div>
-
                 <div class="perfectColor">
                     Level {{userData.player_level}}&nbsp;
                     <i class="fab fa-ethereum perfectColor"></i>
                 </div>
-
                 <div class="successColor">
                     Owned Games {{userData.game_count}}&nbsp;
                     <i class="fas fa-gamepad successColor"></i>
@@ -67,6 +63,6 @@
             </mat-card-content>
         </mat-card>
 
-        <app-recent-games></app-recent-games>
+        <app-recent-games [steamid]="steamid" [nGames]="nGames"></app-recent-games>
     </div>
 </div>
