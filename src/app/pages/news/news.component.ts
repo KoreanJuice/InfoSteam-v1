@@ -22,8 +22,7 @@ export class NewsComponent implements OnInit {
   }
 
   gameSearch(event: string): void {
-    const appid = parseInt(event, 10);
-    this.appid = appid;
+    this.appid = parseInt(event, 10);
     this.getNameApp();
   }
 

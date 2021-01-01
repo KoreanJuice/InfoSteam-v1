@@ -3,7 +3,8 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { SteamAppsService } from '../../shared/services/steam-apps.service';
 import { SteamUserStatsService } from '../../shared/services/steam-user-stats.service';
 import { PlayerService } from '../../shared/services/player.service';
-import { getGameData } from '../../shared/helpers/getGameData';
+import { RecentlyPlayedGames } from '../../shared/interfaces/data/recently-played-games';
+import { getGameData } from '../../shared/helpers/get-game-data';
 
 @Component({
   selector: 'app-recent-games',
@@ -12,10 +13,10 @@ import { getGameData } from '../../shared/helpers/getGameData';
 })
 export class RecentGamesComponent implements OnChanges {
 
-  @Input() steamid: number;
+  @Input() steamid: string;
   @Input() nGames: number;
 
-  public gamesData: any[];
+  public games: RecentlyPlayedGames[];
 
   constructor(
     private steamUserStats: SteamUserStatsService,
@@ -24,28 +25,24 @@ export class RecentGamesComponent implements OnChanges {
   ) { }
 
   ngOnChanges(): void {
-    this.mixData();
+    this.getRecentlyPlayedGames(this.steamid, this.nGames);
   }
-  // TODO: AH
-  private async mixData(): Promise<any> {
-    // let gameData: any;
 
-    // this.gamesData = [];
+  private async getRecentlyPlayedGames(steamid: string, nGames: number): Promise<void> {
+    const { response: { games } } = await this.player.getRecentlyPlayedGames(steamid, nGames);
 
-    // let owo;
-    // owo = await getGameData(524220, this.steamUserStats, this.steamApps);
-    // console.log('recommended games: owo', owo);
+    const recentGames: RecentlyPlayedGames[] = [];
 
-    // const { response: { games } } = await this.player.getRecentlyPlayedGames(this.steamid, this.nGames);
+    for (const game of games) {
+      const gameData = await getGameData(game.appid, this.steamUserStats, this.steamApps);
 
-    // games.forEach(async response => {
-    //   const { appid, gameName, gameImage, player_count, game } = await getGameData(response.appid, this.steamUserStats, this.steamApps);
-    //   this.gamesData.push(response);
-    //   this.gamesData.push(gameData);
-    //   console.log('promise gameData:', game, appid, gameName, gameImage, player_count);
-    // });
+      recentGames.push({
+        recentData: game,
+        data: gameData,
+      });
+    }
 
-    // console.log('recent games: gamesData', this.gamesData);
+    this.games = recentGames;
   }
 
 }

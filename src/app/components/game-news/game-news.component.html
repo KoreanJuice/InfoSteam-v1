@@ -10,8 +10,7 @@
                     <div *ngFor="let tag of news.tags" class="tag">{{tag}}</div>
                 </div>
 
-                <div class="content">
-                    {{news.contents}}
+                <div [innerHTML]="news.contents | safeHtml" class="content">
                 </div>
 
                 <div class="footer">

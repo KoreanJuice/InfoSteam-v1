@@ -23,8 +23,7 @@ import { GameSearchComponent } from './components/game-search/game-search.compon
 import { UserSearchComponent } from './components/user-search/user-search.component';
 import { RecentGamesComponent } from './components/recent-games/recent-games.component';
 // Pipes
-import { ParseUserSearchPipe } from './shared/pipes/parse-user-search.pipe';
-import { CleanSearchPipe } from './shared/pipes/clean-search.pipe';
+import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -38,11 +37,10 @@ import { CleanSearchPipe } from './shared/pipes/clean-search.pipe';
     PageNotFoundComponent,
     GameSearchComponent,
     UserSearchComponent,
-    ParseUserSearchPipe,
-    CleanSearchPipe,
     NewsComponent,
     GameNewsComponent,
     RecentGamesComponent,
+    SafeHtmlPipe,
   ],
   imports: [
     BrowserModule,

@@ -64,7 +64,7 @@ export class SteamUserStatsService extends AbstractSteamUserStatsService {
    * @param appid AppID to get achievements for
    * @param lang Language to return strings for
    */
-  getPlayerAchievements(steamid: number, appid: number, lang?: string): Promise<GetPlayerAchievements> {
+  getPlayerAchievements(steamid: string, appid: number, lang?: string): Promise<GetPlayerAchievements> {
     let urlParams = '';
     if (lang) { urlParams += `&l=${lang}`; }
 
@@ -90,7 +90,7 @@ export class SteamUserStatsService extends AbstractSteamUserStatsService {
    * @param steamid SteamID of user
    * @param appid appid of game
    */
-  getUserStatsForGame(steamid: number, appid: number): Promise<GetUserStatsForGame> {
+  getUserStatsForGame(steamid: string, appid: number): Promise<GetUserStatsForGame> {
     return this.http
       .get<GetUserStatsForGame>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetUserStatsForGame/v2/?key=${key}&steamid=${steamid}&appid=${appid}`)
       .toPromise();

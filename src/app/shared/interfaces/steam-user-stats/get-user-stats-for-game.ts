@@ -3,6 +3,6 @@ export interface GetUserStatsForGame {
     steamID: string;
     gameName: string;
     achievements: any;
-    // TODO: wrong returned data
+    // TODO: interface: wrong returned data
   };
 }

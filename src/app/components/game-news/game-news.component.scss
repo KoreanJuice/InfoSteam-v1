@@ -52,6 +52,19 @@
             border-radius: 5px;
             background-color: $extra-color;
             overflow-y: auto;
+            img {
+                width: 500px;
+                height: auto;
+                margin: auto;
+            }
+            a {
+                color: $info-color;
+                text-decoration: none;
+                * {
+                    color: $info-color;
+                    text-decoration: none;
+                }
+            }
         }
         
         .footer {

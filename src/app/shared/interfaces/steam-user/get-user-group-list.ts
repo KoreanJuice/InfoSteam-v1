@@ -1,10 +1,12 @@
 export interface GetUserGroupList {
-  response: {
-    success: boolean;
-    groups: [
-      {
-        gid: string;
-      }
-    ]
-  };
+  response: SimpleGetUserGroupList;
+}
+
+export interface SimpleGetUserGroupList {
+  success: boolean;
+  groups: MultipleGroups[];
+}
+
+export interface MultipleGroups {
+  gid: string;
 }

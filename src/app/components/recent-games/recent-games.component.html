@@ -1,45 +1,48 @@
-<div class="component-container">
-    <mat-card *ngIf="gamesData === []; else gameEmpty">
-        <mat-card-content class="game-card">
-            <div class="data">
-                <div class="game-image">
-                    <img *ngIf="gameData.gameImage; else imageEmpty" class="header-img" src="{{gameData.gameImage}}"
-                        alt="{{gameData.gameName}} image" title="{{gameData.gameName}}">
-                    <ng-template #imageEmpty>
-                        <img class="header-img" src="../../../assets/image-not-found.jpg" alt="image not found"
-                            title="image not found">
-                    </ng-template>
+<div *ngIf="games" class="component-container">
+    <div *ngIf="games.length > 0; else gameEmpty">
+        <mat-card *ngFor="let game of games">
+            <mat-card-content class="game-card">
+                <div class="data">
+                    <div class="game-image">
+                        <img *ngIf="game.data.gameImage; else imageEmpty" class="header-img"
+                            src="{{game.data.gameImage}}" alt="{{game.data.gameName}} image"
+                            title="{{game.data.gameName}}">
+                        <ng-template #imageEmpty>
+                            <img class="header-img" src="../../../assets/image-not-found.jpg" alt="image not found"
+                                title="image not found">
+                        </ng-template>
+                    </div>
+
+                    <div class="game-desc">
+                        <div class="desc-link">
+                            <a href="https://store.steampowered.com/app/{{game.data.appid}}" target="_blank"
+                                class="link infoColor">
+                                {{game.data.gameName}}
+                                <i class="fas fa-external-link-alt infoColor"></i>
+                            </a>
+                            <a [routerLink]="['/game/', game.data.appid]" class="innerLink link infoColor">
+                                InfoSteam page
+                            </a>
+                        </div>
+                        <div class="desc-players successColor">
+                            {{game.data.player_count}}&nbsp;
+                            <i class="fas fa-users successColor"></i>
+                        </div>
+                        <div class="desc-achievements perfectColor">
+                            {{game.data.game.availableGameStats.achievements.length}}&nbsp;
+                            <i class="fas fa-trophy perfectColor"></i>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="game-desc">
-                    <div class="desc-link">
-                        <a href="https://store.steampowered.com/app/{{gameData.appid}}" target="_blank"
-                            class="link infoColor">
-                            {{gameData.gameName}}
-                            <i class="fas fa-external-link-alt infoColor"></i>
-                        </a>
-                        <a href="/game/{{gameData.appid}}" class="innerLink link infoColor">
-                            InfoSteam page
-                        </a>
-                    </div>
-                    <div class="desc-players successColor">
-                        {{gameData.player_count}}&nbsp;
-                        <i class="fas fa-users successColor"></i>
-                    </div>
-                    <div class="desc-achievements perfectColor">
-                        {{gameData.availableGameStats.achievements.length}}&nbsp;
-                        <i class="fas fa-trophy perfectColor"></i>
-                    </div>
+                <div class="achievements">
+                    <img *ngFor="let achievement of game.data.game.availableGameStats.achievements"
+                        src="{{achievement.icon}}" alt="{{achievement.displayName}}"
+                        title="{{achievement.displayName}}">
                 </div>
-            </div>
-
-            <div class="achievements">
-                <img *ngFor="let achievement of gameData.availableGameStats.achievements" src="{{achievement.icon}}"
-                    alt="{{achievement.displayName}}" title="{{achievement.displayName}}">
-            </div>
-        </mat-card-content>
-    </mat-card>
-
+            </mat-card-content>
+        </mat-card>
+    </div>
     <ng-template #gameEmpty>
         <mat-card class="game-empty">
             <p>We could not fetch any game right now.</p>

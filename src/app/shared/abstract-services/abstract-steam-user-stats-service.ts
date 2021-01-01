@@ -13,10 +13,10 @@ export abstract class AbstractSteamUserStatsService {
 
   abstract getNumberOfCurrentPlayers(appid: number): Promise<GetNumberOfCurrentPlayers>;
 
-  abstract getPlayerAchievements(steamid: number, appid: number, lang?: string): Promise<GetPlayerAchievements>;
+  abstract getPlayerAchievements(steamid: string, appid: number, lang?: string): Promise<GetPlayerAchievements>;
 
   abstract getSchemaForGame(appid: number, lang?: string): Promise<GetSchemaForGame>;
 
-  abstract getUserStatsForGame(steamid: number, appid: number): Promise<GetUserStatsForGame>;
+  abstract getUserStatsForGame(steamid: string, appid: number): Promise<GetUserStatsForGame>;
 
 }

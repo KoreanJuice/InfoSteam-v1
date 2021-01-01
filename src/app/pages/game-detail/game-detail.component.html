@@ -19,7 +19,7 @@
                 </div>
 
                 <div>
-                    Game ver. {{gameData.gameVersion}}&nbsp;
+                    Game ver. {{gameData.game.gameVersion}}&nbsp;
                     <i class="fas fa-code-branch"></i>
                 </div>
 
@@ -37,17 +37,11 @@
                 </div>
 
                 <div class="perfectColor">
-                    Achievements {{gameData.availableGameStats.achievements.length}}&nbsp;
+                    Achievements {{gameData.game.availableGameStats.achievements.length}}&nbsp;
                     <i class="fas fa-trophy perfectColor"></i>
                 </div>
             </div>
         </div>
-
-        <!-- <div class="achievement">
-            <p *ngFor="let achievement of gameData.availableGameStats.achievements">
-                <b>achievement </b>{{achievement.displayName}}
-            </p>
-        </div> -->
 
         <app-game-news [appid]="appid" [nNews]="nNews"></app-game-news>
     </div>

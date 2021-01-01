@@ -1,5 +1,7 @@
 export interface IsPlayingSharedGame {
-  response: {
-    lender_steamid: string;
-  };
+  response: SimpleIsPlayingSharedGame;
+}
+
+export interface SimpleIsPlayingSharedGame {
+  lender_steamid: string;
 }

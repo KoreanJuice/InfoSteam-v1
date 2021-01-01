@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { UserData } from '../../shared/interfaces/data/user-data';
 import { SteamUserService } from '../../shared/services/steam-user.service';
 import { PlayerService } from '../../shared/services/player.service';
-import { getUserData } from '../../shared/helpers/getUserData';
+import { UserData } from '../../shared/interfaces/data/user-data';
+import { getUserData } from '../../shared/helpers/get-user-data';
 
 @Component({
   selector: 'app-user-detail',
@@ -13,23 +14,32 @@ import { getUserData } from '../../shared/helpers/getUserData';
 export class UserDetailComponent implements OnInit {
 
   public userData: UserData;
-  public steamid: number;
   public nGames: number;
+  public steamid: string;
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private steamUser: SteamUserService,
     private player: PlayerService,
   ) { }
 
   ngOnInit(): void {
-    this.steamid = 76561198094709860;
     this.nGames = 3;
-    this.getGameData();
+    this.route.params
+      .subscribe(params => {
+        this.steamid = params.steamid;
+        this.getUserData(this.steamid);
+      });
   }
 
-  private async getGameData(): Promise<void> {
-    this.userData = await getUserData(this.steamid, this.steamUser, this.player);
-    console.log('user detail: userData', this.userData);
+  private async getUserData(steamid: string): Promise<void> {
+    try {
+      this.userData = await getUserData(steamid, this.steamUser, this.player);
+    } catch (error) {
+      console.error('Error while retrieving user data', error);
+      this.router.navigate(['Page_Not_Found']);
+    }
   }
 
 }

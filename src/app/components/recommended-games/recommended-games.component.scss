@@ -42,7 +42,10 @@
         display: flex;
         width: 100%;
         overflow-y: auto;
-        img { margin-right: .5em; }
+        img {
+            margin-right: .5em;
+            width: 64px;
+        }
     }
 }
 

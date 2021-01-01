@@ -42,7 +42,10 @@
         display: flex;
         width: 100%;
         overflow-y: auto;
-        img { margin-right: .5em; }
+        img {
+            margin-right: .5em;
+            width: 64px;
+        }
     }
 }
 
@@ -66,7 +69,6 @@
             width: 80%;
         }
     }
-
     
     .game-card {
         display: flex;
@@ -89,8 +91,8 @@
                     flex-flow: column;
                     text-align: center;
                     .link {
-                        margin: auto 0;
-                        text-align: center;
+                        margin: auto 0 auto 3em;
+                        text-align: left;
                     }
                     .innerLink { display: inline; }
                 }
