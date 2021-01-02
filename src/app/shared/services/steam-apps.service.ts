@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { key } from '../../../key';
 import * as config from '../../../config.json';
 import { AbstractSteamAppsService } from '../abstract-services/abstract-steam-apps-service';
 import { GetAppList } from '../interfaces/steam-apps/get-app-list';
@@ -15,6 +14,8 @@ export class SteamAppsService extends AbstractSteamAppsService {
 
   private readonly INTERFACE = 'ISteamApps';
 
+  private appList: Promise<GetAppList> = null;
+
   constructor(
     private http: HttpClient
   ) {
@@ -25,9 +26,15 @@ export class SteamAppsService extends AbstractSteamAppsService {
    * @return IGetAppList => applist: { apps: [{ appid: number, name: string }] }
    */
   getAppList(): Promise<GetAppList> {
-    return this.http
-      .get<GetAppList>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetAppList/v2/`)
-      .toPromise();
+    if (this.appList) {
+      return this.appList;
+    } else {
+      this.appList = this.http
+        .get<GetAppList>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetAppList/v2/`)
+        .toPromise();
+      return this.appList;
+    }
+
   }
   /**
    * @param addr IP or IP:queryport to list
