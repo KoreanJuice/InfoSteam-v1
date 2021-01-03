@@ -12,7 +12,8 @@ export async function getUserData(steamid: string, steamUser: SteamUserService, 
   const { friendslist: { friends } } = await steamUser.getFriendList(steamid);
 
   let steamids = '';
-  friends.forEach(friend => { steamids += `${friend.steamid},`; });
+  for (const friend of friends) { steamids += `${friend.steamid},`; }
+
   const { response } = await steamUser.getPlayerSummaries(steamids);
 
   return {
