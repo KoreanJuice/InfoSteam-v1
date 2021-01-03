@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       if (response.success === 1) {
         this.steamid = response.steamid;
       } else {
-        // TODO: consider send params to page not found to show error
+        // TODO: consider send params to "page not found" to show error
         this.router.navigate([`User_Not_Found`]);
       }
     }

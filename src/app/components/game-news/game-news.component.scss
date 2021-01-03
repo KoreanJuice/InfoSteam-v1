@@ -13,7 +13,7 @@
         text-align: center;
     }
 
-    .news-content {
+    .card-content {
         .author {
             margin: 1em 0;
             font-weight: 500;
@@ -103,7 +103,7 @@
     .component-container {
         width: 70%;
         .news-card {
-            .news-content {
+            .card-content {
                 .content {
                     img {
                         width: 500px;
