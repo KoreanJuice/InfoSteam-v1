@@ -1,4 +1,4 @@
-# InfoSteam
+# InfoSteam v1.0.0
 
 InfoSteam is a web app project to make request against the Steam API.
 
@@ -20,7 +20,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Incoming features!
 
-* Track game prices (Euro). 🔍
+* Track game prices (Euro)(?). 🔍
 * Backend server so there won't be needed a browser extension. ⚙
 * Local storage to save your preferences and changes in the app. 📁
 * Login with your Steam account to see your stats and achievements. ✔
@@ -38,14 +38,6 @@ InfoSteam uses:
 
 Run `npm i` to install required node_modules.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 License
 ----
