@@ -27,7 +27,7 @@ export class SteamUserService extends AbstractSteamUserService {
    * @param steamid SteamID of user
    * @param relationship relationship type (ex: friend)
    */
-  getFriendList(steamid: number, relationship?: string): Promise<GetFriendList> {
+  getFriendList(steamid: string, relationship?: string): Promise<GetFriendList> {
     let urlParams = '';
     if (relationship) { urlParams += `&relationship=${relationship}`; }
 
@@ -56,7 +56,7 @@ export class SteamUserService extends AbstractSteamUserService {
    * Return a list of group ids which user has subscribed
    * @param steamid SteamID of user
    */
-  getUserGroupList(steamid: number): Promise<GetUserGroupList> {
+  getUserGroupList(steamid: string): Promise<GetUserGroupList> {
     return this.http
       .get<GetUserGroupList>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetUserGroupList/v1/?key=${key}&steamid=${steamid}`)
       .toPromise();

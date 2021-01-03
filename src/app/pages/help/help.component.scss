@@ -1,1 +1,49 @@
 @import '../../../variables';
+
+/*
+    ---------
+    GENERAL
+    ---------
+*/
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 2;
+
+    section {
+        .fas,
+        .fab {
+            display: inline-block;
+            width: 20px;
+        }
+        .link { text-decoration: none; }
+        .highlighted { font-variant: small-caps; }
+        mat-divider { margin: 1em 0; }
+        ul { margin: 0; }
+    }
+}
+
+/*
+    ---------
+    RESPONSIVE
+    ---------
+*/
+
+@media only screen and (min-width: 768px) {
+    .page-container {
+        flex-direction: row;
+        section {
+            margin: 1em;
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .page-container {
+        width: 70%;
+        margin: 1em auto;
+    }
+}

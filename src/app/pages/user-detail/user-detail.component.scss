@@ -58,7 +58,8 @@
                     margin: auto 0;
                     width: 33%;
                 }
-                .friend-url {
+                .friend-url,
+                .friend-innerUrl {
                     display: none;
                     .link {
                         text-decoration: none;
@@ -115,7 +116,8 @@
             mat-card-content {
                 .friend {
                     div { width: 25%; }
-                    .friend-url { display: block; }
+                    .friend-url,
+                    .friend-innerUrl { display: block; }
                 }
             }
         }

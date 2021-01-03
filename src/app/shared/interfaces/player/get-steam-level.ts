@@ -1,5 +1,7 @@
 export interface GetSteamLevel {
-  response: {
-    player_level: number;
-  };
+  response: SimpleGetSteamLevel;
+}
+
+export interface SimpleGetSteamLevel {
+  player_level: number;
 }

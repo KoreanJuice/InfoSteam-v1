@@ -28,7 +28,7 @@ export class PlayerService extends AbstractPlayerService {
    * @param steamid The player we're asking about
    * @param count The number of games to return (0/unset: all)
    */
-  getRecentlyPlayedGames(steamid: number, count?: number): Promise<GetRecentlyPlayedGames> {
+  getRecentlyPlayedGames(steamid: string, count?: number): Promise<GetRecentlyPlayedGames> {
     let urlParams = '';
     if (count) { urlParams += `&count=${count}`; }
 
@@ -43,7 +43,7 @@ export class PlayerService extends AbstractPlayerService {
    * @param includePlayedFreeGames Free games are excluded by default. If this is set, free games the user has played will be returned.
    * @param appidsFilter if set, restricts result set to the passed in apps
    */
-  getOwnedGames(steamid: number, includeAppinfo: boolean, includePlayedFreeGames?: boolean, appidsFilter?: number): Promise<GetOwnedGames> {
+  getOwnedGames(steamid: string, includeAppinfo: boolean, includePlayedFreeGames?: boolean, appidsFilter?: number): Promise<GetOwnedGames> {
     let urlParams = '';
     if (includePlayedFreeGames !== undefined) { urlParams += `&include_played_free_games=${includePlayedFreeGames}`; }
     if (appidsFilter) { urlParams += `&appids_filter=${appidsFilter}`; }
@@ -56,7 +56,7 @@ export class PlayerService extends AbstractPlayerService {
    * Returns the Steam Level of a user
    * @param steamid The player we're asking about
    */
-  getSteamLevel(steamid: number): Promise<GetSteamLevel> {
+  getSteamLevel(steamid: string): Promise<GetSteamLevel> {
     return this.http
       .get<GetSteamLevel>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetSteamLevel/v1/?key=${key}&steamid=${steamid}`)
       .toPromise();
@@ -65,7 +65,7 @@ export class PlayerService extends AbstractPlayerService {
    * Gets badges that are owned by a specific user
    * @param steamid The player we're asking about
    */
-  getBadges(steamid: number): Promise<GetBadges> {
+  getBadges(steamid: string): Promise<GetBadges> {
     return this.http
       .get<GetBadges>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetBadges/v1/?key=${key}&steamid=${steamid}`)
       .toPromise();
@@ -75,7 +75,7 @@ export class PlayerService extends AbstractPlayerService {
    * @param steamid The player we're asking about
    * @param badgeid The badge we're asking about
    */
-  getCommunityBadgeProgress(steamid: number, badgeid: number): Promise<GetCommunityBadgeProgress> {
+  getCommunityBadgeProgress(steamid: string, badgeid: number): Promise<GetCommunityBadgeProgress> {
     return this.http
       .get<GetCommunityBadgeProgress>(`${config.STEAM_API_URL}/${this.INTERFACE}/GetCommunityBadgeProgress/v1/?key=${key}&steamid=${steamid}&badgeid=${badgeid}`)
       .toPromise();
@@ -85,7 +85,7 @@ export class PlayerService extends AbstractPlayerService {
    * @param steamid The player we're asking about
    * @param appidPlaying The game player is currently playing
    */
-  isPlayingSharedGame(steamid: number, appidPlaying: number): Promise<IsPlayingSharedGame> {
+  isPlayingSharedGame(steamid: string, appidPlaying: number): Promise<IsPlayingSharedGame> {
     return this.http
       .get<IsPlayingSharedGame>(`${config.STEAM_API_URL}/${this.INTERFACE}/IsPlayingSharedGame/v1/?key=${key}&steamid=${steamid}&appid_playing=${appidPlaying}`)
       .toPromise();

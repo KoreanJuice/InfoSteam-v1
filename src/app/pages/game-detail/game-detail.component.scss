@@ -10,7 +10,7 @@
     h1 { margin-top: 0; }
 
     .header-img {
-        width: 92%;
+        width: 100%;
         border-radius: 4px;
     }
 
@@ -77,7 +77,12 @@
 
 @media only screen and (min-width: 1024px) {
     .page-container {
-        .data { width: 70%; }
+        .data {
+            width: 70%;
+            .image {
+                .header-img { width: 400px;}
+            }
+        }
         .achievement { width: 70%; }
     }
 }

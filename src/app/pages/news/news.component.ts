@@ -18,12 +18,11 @@ export class NewsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.nNews = 3;
+    this.nNews = 5;
   }
 
   gameSearch(event: string): void {
-    const appid = parseInt(event, 10);
-    this.appid = appid;
+    this.appid = parseInt(event, 10);
     this.getNameApp();
   }
 

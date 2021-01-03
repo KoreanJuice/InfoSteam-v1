@@ -1,4 +1,4 @@
-// Remove sample. from file name (✿◡‿◡)
+// Remove sample. from file name (✿◡‿◡) and type your STEAM API KEY here
 export const key = 'YOUR-STEAM-API-KEY';
 
 /*
@@ -8,7 +8,7 @@ export const key = 'YOUR-STEAM-API-KEY';
   customURL : http://steamcommunity.com/id/monorata2
   profile : http://steamcommunity.com/profiles/76561198094709860
 
-  -- Samples for appid --
+  -- Samples for apps --
   524220 : Nier: Automata,
   237930 : Transistor,
   312750 : Final Fantasy IV,

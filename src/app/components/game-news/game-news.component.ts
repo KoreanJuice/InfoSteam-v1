@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 
 import { GetNewsForApp } from '../../shared/interfaces/steam-news/get-news-for-app';
 import { SteamNewsService } from '../../shared/services/steam-news.service';
@@ -6,7 +6,8 @@ import { SteamNewsService } from '../../shared/services/steam-news.service';
 @Component({
   selector: 'app-game-news',
   templateUrl: './game-news.component.html',
-  styleUrls: ['./game-news.component.scss']
+  styleUrls: ['./game-news.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class GameNewsComponent implements OnChanges {
 

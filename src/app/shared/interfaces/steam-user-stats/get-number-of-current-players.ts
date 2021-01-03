@@ -1,6 +1,8 @@
 export interface GetNumberOfCurrentPlayers {
-  response: {
-    player_count: number;
-    result: number;
-  };
+  response: SimpleGetNumberOfCurrentPlayers;
+}
+
+export interface SimpleGetNumberOfCurrentPlayers {
+  player_count: number;
+  result: number;
 }

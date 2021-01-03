@@ -1,8 +1,8 @@
-import { GetPlayerSummaries } from '../steam-user/get-player-summaries';
+import { MultiplePlayerSummaries, SinglePlayerSummaries } from '../steam-user/get-player-summaries';
 
 export interface UserData {
-  player: GetPlayerSummaries;
+  player: SinglePlayerSummaries;
   player_level: number;
   game_count: number;
-  friends: GetPlayerSummaries[];
+  friends: MultiplePlayerSummaries;
 }

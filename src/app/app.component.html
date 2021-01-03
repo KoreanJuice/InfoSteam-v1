@@ -8,11 +8,11 @@
 </mat-toolbar>
 
 <mat-drawer-container [hasBackdrop]="true" class="drawer-container">
-    <mat-drawer #drawer [mode]="over" class="drawer sidenavBgColor">
+    <mat-drawer #drawer [mode]="'over'" class="drawer sidenavBgColor">
         <mat-list role="list">
             <mat-list-item [routerLink]="['']" role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
                 <i class="fas fa-search"></i>
-                Tracker
+                Home
             </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item [routerLink]="['news']" role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
@@ -20,29 +20,11 @@
                 Game news
             </mat-list-item>
             <mat-divider></mat-divider>
-            <!-- TODO: GAME AND USER SIDENAV SHOULD BE GONE WHEN ROUTING /:id DONE -->
-            <mat-list-item [routerLink]="['game/aa']" role="navigation" class="btn drawer-item"
-                (click)="drawer.toggle()">
-                <i class="fas fa-search"></i>
-                Game
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item [routerLink]="['user/aa']" role="navigation" class="btn drawer-item"
-                (click)="drawer.toggle()">
-                <i class="fas fa-search"></i>
-                User
-            </mat-list-item>
-            <mat-divider></mat-divider>
             <mat-list-item [routerLink]="['help']" role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
                 <i class="fas fa-info"></i>
                 Help
             </mat-list-item>
             <mat-divider></mat-divider>
-
-            <mat-list-item [routerLink]="['legal']" role="navigation" class="btn drawer-item" (click)="drawer.toggle()">
-                <i class="fas fa-balance-scale"></i>
-                Legal
-            </mat-list-item>
         </mat-list>
     </mat-drawer>
 

@@ -12,7 +12,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { NewsComponent } from './pages/news/news.component';
 import { GameDetailComponent } from './pages/game-detail/game-detail.component';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
-import { LegalComponent } from './pages/legal/legal.component';
 import { HelpComponent } from './pages/help/help.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 // Components
@@ -23,26 +22,27 @@ import { GameSearchComponent } from './components/game-search/game-search.compon
 import { UserSearchComponent } from './components/user-search/user-search.component';
 import { RecentGamesComponent } from './components/recent-games/recent-games.component';
 // Pipes
-import { ParseUserSearchPipe } from './shared/pipes/parse-user-search.pipe';
-import { CleanSearchPipe } from './shared/pipes/clean-search.pipe';
+import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
+import { ShortDecimalsPipe } from './shared/pipes/short-decimals.pipe';
+import { ShowUTCTimePipe } from './shared/pipes/show-utc-time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RecommendedGamesComponent,
-    LegalComponent,
     HelpComponent,
     GameDetailComponent,
     UserDetailComponent,
     PageNotFoundComponent,
     GameSearchComponent,
     UserSearchComponent,
-    ParseUserSearchPipe,
-    CleanSearchPipe,
     NewsComponent,
     GameNewsComponent,
     RecentGamesComponent,
+    SafeHtmlPipe,
+    ShortDecimalsPipe,
+    ShowUTCTimePipe,
   ],
   imports: [
     BrowserModule,

@@ -7,16 +7,16 @@ import { IsPlayingSharedGame } from '../interfaces/player/is-playing-shared-game
 
 export abstract class AbstractPlayerService {
 
-  abstract getRecentlyPlayedGames(steamid: number, count?: number): Promise<GetRecentlyPlayedGames>;
+  abstract getRecentlyPlayedGames(steamid: string, count?: number): Promise<GetRecentlyPlayedGames>;
 
-  abstract getOwnedGames(steamid: number, includeAppinfo: boolean, includePlayedFreeGames?: boolean, appidsFilter?: number): Promise<GetOwnedGames>;
+  abstract getOwnedGames(steamid: string, includeAppinfo: boolean, includePlayedFreeGames?: boolean, appidsFilter?: number): Promise<GetOwnedGames>;
 
-  abstract getSteamLevel(steamid: number): Promise<GetSteamLevel>;
+  abstract getSteamLevel(steamid: string): Promise<GetSteamLevel>;
 
-  abstract getBadges(steamid: number): Promise<GetBadges>;
+  abstract getBadges(steamid: string): Promise<GetBadges>;
 
-  abstract getCommunityBadgeProgress(steamid: number, badgeid: number): Promise<GetCommunityBadgeProgress>;
+  abstract getCommunityBadgeProgress(steamid: string, badgeid: number): Promise<GetCommunityBadgeProgress>;
 
-  abstract isPlayingSharedGame(steamid: number, appidPlaying: number): Promise<IsPlayingSharedGame>;
+  abstract isPlayingSharedGame(steamid: string, appidPlaying: number): Promise<IsPlayingSharedGame>;
 
 }

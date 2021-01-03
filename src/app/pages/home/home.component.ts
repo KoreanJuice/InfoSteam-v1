@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { SteamUserService } from '../../shared/services/steam-user.service';
-import { ResolveVanityUrl } from '../../shared/interfaces/steam-user/resolve-vanity-url';
-import { userRegExp } from '../../shared/helpers/userRegExp';
+import { notIdUserRegExp } from '../../shared/helpers/user-reg-exp';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +11,11 @@ import { userRegExp } from '../../shared/helpers/userRegExp';
 })
 export class HomeComponent implements OnInit {
 
-  private gameSearched: number;
-  private userSearched: string | number;
+  private appid: number;
+  private steamid: string;
 
   constructor(
+    private router: Router,
     private steamUser: SteamUserService,
   ) { }
 
@@ -22,24 +23,23 @@ export class HomeComponent implements OnInit {
   }
 
   gameSearch(event: string): void {
-    const appid = parseInt(event, 10);
-    this.gameSearched = appid;
-    // TODO: route to game detail
+    this.appid = parseInt(event, 10);
+    this.router.navigate([`/game/${this.appid}`]);
   }
 
   async userSearch(event: string): Promise<any> {
-    if (userRegExp(event)) {
-      let resolvedUrl: ResolveVanityUrl;
-      resolvedUrl = await this.steamUser.resolveVanityURL(event);
+    if (notIdUserRegExp(event)) {
+      const { response } = await this.steamUser.resolveVanityURL(event);
 
-      if (resolvedUrl.respone.success === 1) {
-        const steamid = resolvedUrl.respone.steamid;
-        this.userSearched = parseInt(steamid, 10);
+      if (response.success === 1) {
+        this.steamid = response.steamid;
+      } else {
+        // TODO: consider send params to "page not found" to show error
+        this.router.navigate([`User_Not_Found`]);
       }
     }
-    this.userSearched = parseInt(event, 10);
-    // TODO: route to user detail
 
+    this.router.navigate([`/user/${this.steamid}`]);
   }
 
 }

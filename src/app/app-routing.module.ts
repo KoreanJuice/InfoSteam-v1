@@ -7,7 +7,6 @@ import { NewsComponent } from './pages/news/news.component';
 import { GameDetailComponent } from './pages/game-detail/game-detail.component';
 import { UserDetailComponent } from './pages/user-detail/user-detail.component';
 import { HelpComponent } from './pages/help/help.component';
-import { LegalComponent } from './pages/legal/legal.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -30,10 +29,6 @@ const routes: Routes = [
   {
     path: 'help',
     component: HelpComponent,
-  },
-  {
-    path: 'legal',
-    component: LegalComponent,
   },
   {
     path: '**',

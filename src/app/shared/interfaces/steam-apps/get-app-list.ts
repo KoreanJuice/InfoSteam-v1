@@ -1,10 +1,12 @@
 export interface GetAppList {
-  applist: {
-    apps: [
-      {
-        appid: number;
-        name: string;
-      }
-    ]
-  };
+  applist: SimpleGetAppList;
+}
+
+export interface SimpleGetAppList {
+  apps: MultipleApps[];
+}
+
+export interface MultipleApps {
+  appid: number;
+  name: string;
 }

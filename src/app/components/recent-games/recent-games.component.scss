@@ -6,7 +6,9 @@
     ---------
 */
 
-.game-card {
+.game-card { margin: 1em 0; }
+
+.card-content {
     .game-image {
         display: flex;
         .header-img { width: 100%; }
@@ -14,11 +16,15 @@
 
     .game-desc {
         display: flex;
-        margin: 1em auto;
+        flex-wrap: wrap;
+        margin: 1em auto 0;
         font-size: 1.1em;
 
         .desc-link {
-            width: 60%;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 1em;
             text-align: left;
 
             .link {
@@ -28,21 +34,19 @@
                     vertical-align: super;
                 }
             }
-            .innerLink { display: none; }
+            .w-md { display: none; }
         }
 
         .desc-players,
-        .desc-achievements {
-            width: 20%;
-            text-align: right;
+        .desc-achievements,
+        .desc-time2Weeks,
+        .desc-timeForever {
+            margin: auto 0;
+            width: 25%;
+            text-align: center;
+            p { margin: 0; }
+            .w-md { display: none; }
         }
-    }
-
-    .achievements {
-        display: flex;
-        width: 100%;
-        overflow-y: auto;
-        img { margin-right: .5em; }
     }
 }
 
@@ -60,15 +64,14 @@
 @media only screen and (min-width: 768px) {
     .component-container {
         margin: 1em auto;
+        width: 80%;
 
-        mat-card { 
+        .game-card { 
             margin: 1em auto;
-            width: 80%;
         }
     }
-
     
-    .game-card {
+    .card-content {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -76,7 +79,6 @@
         .data {
             display: flex;
             width: 100%;
-            margin-bottom: 1em;
 
             .game-image { width: 40%; }
             
@@ -86,29 +88,31 @@
 
                 .desc-link {
                     display: flex;
-                    flex-flow: column;
-                    text-align: center;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+
                     .link {
-                        margin: auto 0;
-                        text-align: center;
+                        margin: auto 0 auto 2em;
+                        text-align: left;
                     }
-                    .innerLink { display: inline; }
+                    .w-md { display: inline; }
                 }
 
                 .desc-players,
-                .desc-achievements {
-                    margin: auto;
+                .desc-achievements,
+                .desc-time2Weeks,
+                .desc-timeForever {
+                    margin: auto 0;
+                    width: 25%;
                     text-align: center;
+                    p {
+                        font-size: .8em;
+                        margin-bottom: 0;
+                    }
+                    .w-md {
+                        display: block;
+                    }
                 }
-            }
-
-            .achievements {
-                display: flex;
-                width: 100%;
-                overflow-y: auto;
-                align-self: flex-end;
-                margin-top: 1em;
-                img { margin-right: 0.5em; }
             }
         }
     }
@@ -116,7 +120,18 @@
 
 @media only screen and (min-width: 1024px) {
     .component-container {
-        mat-card { width: 70%; }
-        .game-desc { font-size: 1.2em; }
+        width: 70%;
+        .card-content {
+            .game-image {
+                width: 347px;
+                img { width: 347px; }
+            }
+            .game-desc { font-size: 1.2em; }
+            .data {
+                .game-desc {
+                    .desc-link { flex-direction: row; }
+                }
+            }
+        }
     }
 }
