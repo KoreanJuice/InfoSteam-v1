@@ -1,6 +1,6 @@
 <div class="page-container">
     <div *ngIf="gameData" class="game">
-        <h1>{{gameData.gameName | titlecase}}</h1>
+        <h1>{{gameData.gameName | uppercase}}</h1>
 
         <div class="data">
             <div class="image">
@@ -14,30 +14,30 @@
 
             <div class="info">
                 <div>
-                    Steam appid {{gameData.appid}}&nbsp;
+                    Steam appid {{gameData.appid}}
                     <i class="fab fa-steam-symbol"></i>
                 </div>
 
                 <div>
-                    Game ver. {{gameData.game.gameVersion}}&nbsp;
+                    Game ver. {{gameData.game.gameVersion}}
                     <i class="fas fa-code-branch"></i>
                 </div>
 
                 <div>
                     <a href="https://store.steampowered.com/app/{{gameData.appid}}" target="_blank"
                         class="link infoColor">
-                        Steam store&nbsp;
+                        Steam store
                         <i class="fas fa-external-link-alt infoColor"></i>
                     </a>
                 </div>
 
                 <div class="successColor">
-                    Active players {{gameData.player_count}}&nbsp;
+                    Active players {{gameData.player_count}}
                     <i class="fas fa-users successColor"></i>
                 </div>
 
                 <div class="perfectColor">
-                    Achievements {{gameData.game.availableGameStats.achievements.length}}&nbsp;
+                    Achievements {{gameData.game.availableGameStats.achievements.length}}
                     <i class="fas fa-trophy perfectColor"></i>
                 </div>
             </div>

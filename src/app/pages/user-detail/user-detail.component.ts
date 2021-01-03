@@ -16,6 +16,7 @@ export class UserDetailComponent implements OnInit {
   public userData: UserData;
   public nGames: number;
   public steamid: string;
+  public creationDate: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +37,7 @@ export class UserDetailComponent implements OnInit {
   private async getUserData(steamid: string): Promise<void> {
     try {
       this.userData = await getUserData(steamid, this.steamUser, this.player);
+      this.creationDate = new Date(this.userData.player.timecreated * 1000).toUTCString();
     } catch (error) {
       console.error('Error while retrieving user data', error);
       this.router.navigate(['Page_Not_Found']);

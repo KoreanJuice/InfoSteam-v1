@@ -53,9 +53,8 @@
             background-color: $extra-color;
             overflow-y: auto;
             img {
-                width: 500px;
+                width: 100%;
                 height: auto;
-                margin: auto;
             }
             a {
                 color: $info-color;
@@ -101,5 +100,18 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    .component-container { width: 70%; }
+    .component-container {
+        width: 70%;
+        .news-card {
+            .news-content {
+                .content {
+                    img {
+                        width: 500px;
+                        margin: 0px calc(50% - 250px);
+                    }
+                }
+            }
+        }
+        
+    }
 }

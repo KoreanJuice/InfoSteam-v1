@@ -20,22 +20,26 @@
                     </ng-template>
                 </div>
                 <div>
-                    Steam id {{userData.player.steamid}}&nbsp;
+                    Steam ID - {{userData.player.steamid}}
                     <i class="fab fa-steam-symbol"></i>
                 </div>
                 <div>
                     <a href="{{userData.player.profileurl}}" target="_blank" class="link infoColor">
-                        Steam profile&nbsp;
+                        Steam profile
                         <i class="fas fa-external-link-alt infoColor"></i>
                     </a>
                 </div>
                 <div class="perfectColor">
-                    Level {{userData.player_level}}&nbsp;
+                    Level {{userData.player_level}}
                     <i class="fab fa-ethereum perfectColor"></i>
                 </div>
                 <div class="successColor">
-                    Owned Games {{userData.game_count}}&nbsp;
+                    Owned Games {{userData.game_count}}
                     <i class="fas fa-gamepad successColor"></i>
+                </div>
+                <div>
+                    Account created - {{creationDate | showUTCTime}}
+                    <i class="fas fa-calendar-alt"></i>
                 </div>
             </div>
         </div>
@@ -49,9 +53,12 @@
                     <div class="friend-name">{{friend.personaname}}</div>
                     <div class="friend-url infoColor">
                         <a href="{{friend.profileurl}}" target="_blank" class="link infoColor">
-                            Profile&nbsp;
+                            Profile
                             <i class="fas fa-external-link-alt infoColor"></i>
                         </a>
+                    </div>
+                    <div class="friend-innerUrl infoColor">
+                        <a [routerLink]="['/user/', friend.steamid]" class="link infoColor">InfoSteam</a>
                     </div>
                     <div class="friend-state">
                         <span *ngIf="friend.personastate === 1; else userOffline" class="successColor">Online</span>

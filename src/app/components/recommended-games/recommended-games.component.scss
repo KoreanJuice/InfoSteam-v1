@@ -5,8 +5,9 @@
     CARD
     ---------
 */
+.game-card { margin: 1em 0; }
 
-.game-card {
+.card-content {
     .game-image {
         display: flex;
         .header-img { width: 100%; }
@@ -64,13 +65,13 @@
     .component-container {
         margin: 1em auto;
 
-        mat-card { 
+        .game-card { 
             margin: 1em auto;
             width: 80%;
         }
     }
     
-    .game-card {
+    .card-content {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -91,7 +92,7 @@
                     flex-flow: column;
                     text-align: center;
                     .link {
-                        margin: auto 0 auto 3em;
+                        margin: auto 0 auto 2em;
                         text-align: left;
                     }
                     .innerLink { display: inline; }
@@ -118,7 +119,13 @@
 
 @media only screen and (min-width: 1024px) {
     .component-container {
-        mat-card { width: 70%; }
-        .game-desc { font-size: 1.2em; }
+        .game-card { width: 70%; }
+        .card-content {
+            .game-image {
+                width: 347px;
+                img { width: 347px; }
+            }
+            .game-desc { font-size: 1.2em; }
+        }
     }
 }
