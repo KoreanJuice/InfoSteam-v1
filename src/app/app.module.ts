@@ -24,6 +24,8 @@ import { UserSearchComponent } from './components/user-search/user-search.compon
 import { RecentGamesComponent } from './components/recent-games/recent-games.component';
 // Pipes
 import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
+import { ShortDecimalsPipe } from './shared/pipes/short-decimals.pipe';
+import { ShowUTCTimePipe } from './shared/pipes/show-utc-time.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
     GameNewsComponent,
     RecentGamesComponent,
     SafeHtmlPipe,
+    ShortDecimalsPipe,
+    ShowUTCTimePipe,
   ],
   imports: [
     BrowserModule,
