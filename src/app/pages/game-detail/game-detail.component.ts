@@ -25,7 +25,7 @@ export class GameDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.nNews = 1;
+    this.nNews = 3;
     this.route.params
       .subscribe(params => {
         this.appid = parseInt(params.appid, 10);

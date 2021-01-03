@@ -5,7 +5,7 @@
                 <div class="data">
                     <div class="game-image">
                         <img *ngIf="game.data.gameImage; else imageEmpty" class="header-img"
-                            src="{{game.data.gameImage}}" alt="{{game.data.gameName}} image"
+                            src="{{game.data.gameImage}}" alt="{{game.data.gameName}} header image"
                             title="{{game.data.gameName}}">
                         <ng-template #imageEmpty>
                             <img class="header-img" src="../../../assets/image-not-found.jpg" alt="image not found"
@@ -24,22 +24,23 @@
                                 InfoSteam page
                             </a>
                         </div>
-                        <div class="desc-players successColor">
+                        <div class="desc-players successColor" title="Online users playing the game">
                             {{game.data.player_count}}
                             <i class="fas fa-users successColor"></i>
                         </div>
-                        <div *ngIf="game.data.game.availableGameStats" class="desc-achievements perfectColor">
+                        <div *ngIf="game.data.game.availableGameStats" class="desc-achievements perfectColor"
+                            title="Total game achievements">
                             {{game.data.game.availableGameStats.achievements.length}}
                             <i class="fas fa-trophy perfectColor"></i>
                         </div>
-                        <div class="desc-time2Weeks successColor">
+                        <div class="desc-time2Weeks successColor" title="Hours played last 2 weeks">
                             + {{game.recentData.playtime_2weeks / 60 | shortDecimals }} h
                             <i class="fas fa-calendar-week successColor"></i>
                             <p class="w-md successColor">
                                 Last 2 weeks
                             </p>
                         </div>
-                        <div class="desc-timeForever successColor">
+                        <div class="desc-timeForever successColor" title="Total hours played">
                             {{game.recentData.playtime_forever / 60 | shortDecimals }} h
                             <i class="fas fa-hourglass-half successColor"></i>
                             <p class="w-md successColor">

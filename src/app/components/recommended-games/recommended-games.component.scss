@@ -89,8 +89,9 @@
 
                 .desc-link {
                     display: flex;
-                    flex-flow: column;
-                    text-align: center;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+
                     .link {
                         margin: auto 0 auto 2em;
                         text-align: left;
@@ -126,6 +127,11 @@
                 img { width: 347px; }
             }
             .game-desc { font-size: 1.2em; }
+            .data {
+                .game-desc {
+                    .desc-link { flex-direction: row; }
+                }
+            }
         }
     }
 }
