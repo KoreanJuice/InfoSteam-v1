@@ -29,17 +29,21 @@ export class RecentGamesComponent implements OnChanges {
   }
 
   private async getRecentlyPlayedGames(steamid: string, nGames: number): Promise<void> {
-    const { response: { games } } = await this.player.getRecentlyPlayedGames(steamid, nGames);
+    const { response } = await this.player.getRecentlyPlayedGames(steamid, nGames);
+
+    const { games } = response;
 
     const recentGames: RecentlyPlayedGames[] = [];
 
-    for (const game of games) {
-      const gameData = await getGameData(game.appid, this.steamUserStats, this.steamApps);
+    if (response.total_count > 0) {
+      for (const game of games) {
+        const gameData = await getGameData(game.appid, this.steamUserStats, this.steamApps);
 
-      recentGames.push({
-        recentData: game,
-        data: gameData,
-      });
+        recentGames.push({
+          recentData: game,
+          data: gameData,
+        });
+      }
     }
 
     this.games = recentGames;
