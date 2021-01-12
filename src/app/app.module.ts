@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Modules
 import { AppRoutingModule } from './app-routing.module';
-import { material } from './shared/material/material';
+import { material } from './shared/modules/material';
 // Pages components
 import { HomeComponent } from './pages/home/home.component';
 import { NewsComponent } from './pages/news/news.component';
